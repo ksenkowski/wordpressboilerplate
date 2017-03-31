@@ -13,9 +13,8 @@
 		<meta name="description" content="<?php bloginfo('description'); ?>">
 
 		<?php wp_head(); ?>
+		
 		<script>
-        // conditionizr.com
-        // configure environment tests
         conditionizr.config({
             assets: '<?php echo get_template_directory_uri(); ?>',
             tests: {}
@@ -25,26 +24,23 @@
 	</head>
 	<body <?php body_class(); ?>>
 
-		<!-- wrapper -->
-		<div class="wrapper">
 
 			<!-- header -->
-			<header class="header clear" role="banner">
-
+			<header class="header" role="banner">
+				<div class="content">
 					<!-- logo -->
-					<div class="logo">
+					<div class="span-3 col">
 						<a href="<?php echo home_url(); ?>">
-							<!-- svg logo - toddmotto.com/mastering-svg-use-for-a-retina-web-fallbacks-with-png-script -->
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo.svg" alt="Logo" class="logo-img">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo.svg" onerror="<?php echo get_template_directory_uri(); ?>/assets/img/logo.png'" class="logo">
 						</a>
-					</div>
-					<!-- /logo -->
-
+				</div>
+				<div class="span-9 col">
 					<!-- nav -->
 					<nav class="nav" role="navigation">
 						<?php boilerplate_nav(); ?>
 					</nav>
 					<!-- /nav -->
-
+				</div>
+				</div>
 			</header>
 			<!-- /header -->

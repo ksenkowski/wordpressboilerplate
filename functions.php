@@ -127,6 +127,42 @@ function remove_category_rel_from_category_list($thelist){
 }
 add_filter('the_category', 'remove_category_rel_from_category_list'); 
 
+//Social Sharing
+function opengraph() {
+    global $post;
+ 
+        if(has_post_thumbnail($post->ID)) {
+            $img_src = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'medium');
+        } else {
+            $img_src = get_stylesheet_directory_uri() . '/assets/img/share.jpg';
+        }
+		
+        if($excerpt = $post->post_excerpt) {
+            $excerpt = strip_tags($post->post_excerpt);
+            $excerpt = str_replace("", "'", $excerpt);
+        } else {
+            $excerpt = get_bloginfo('description');
+        }
+        ?>
+    <meta property="og:title" content="<?php echo the_title(); ?>"/>
+    <meta property="twitter:title" content="<?php echo the_title(); ?>"/>
+    <meta property="og:description" content="<?php echo $excerpt; ?>"/>
+	<meta name="twitter:description" content="<?php echo $excerpt; ?>">
+    <meta property="og:type" content="article"/>
+    <meta property="og:url" content="<?php echo the_permalink(); ?>"/>
+    <meta property="og:site_name" content="<?php echo get_bloginfo(); ?>"/>
+    <meta property="og:image" content="<?php echo $img_src; ?>"/>
+	<meta name="twitter:card" content="<?php echo $img_src; ?>">	
+	<meta name="twitter:site" content="@twitter">
+	<meta name="twitter:creator" content="@twitter">
+
+ 
+<?php
+ 
+}
+add_action('wp_head', 'opengraph', 5);
+
+
 // Add page slug to body class, love this - Credit: Starkers Wordpress Theme
 function add_slug_to_body_class($classes){
     global $post;
