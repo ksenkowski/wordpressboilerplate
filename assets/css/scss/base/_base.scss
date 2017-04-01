@@ -9,9 +9,9 @@ body{
 	font-size: 1em;
     line-height: 1.25em;
     font-weight: 300;
-	color:$black;
+	color:$color-primary-3;
 	position:relative;
-	background:$white;
+	background:$color-primary-5;
 }
 main{
 	margin:0 auto;
@@ -88,7 +88,7 @@ s{
 }
 hr{
 	height:2px;
-	border-top:1px solid $white;
+	border-top:1px solid $color-primary-5;
 }
 code{
 	padding:em(16px);
@@ -130,7 +130,7 @@ h3,
 h4,
 h5,
 h6 {
-	font-family:$secondary-stack;
+	font-family:$primary-stack;
 	font-weight:normal;
 	margin:0;
 }
@@ -222,21 +222,21 @@ ol.lower-roman{
    ========================================================================== */
 
 a {
-    color:$color-complement-0;
-//	border-bottom:1px solid $color-complement-0;
+    color:$color-secondary-0;
+//	border-bottom:1px solid $color-secondary-0;
 	text-decoration: none;
-	background:linear-gradient($white, $white),linear-gradient($white, $white), linear-gradient($color-complement-0, $color-complement-0);
+	background:linear-gradient($color-primary-5, $color-primary-5),linear-gradient($color-primary-5, $color-primary-5), linear-gradient($color-secondary-0, $color-secondary-0);
 	background-size:.05em 1px, .05em 1px, 1px, 1px;
 	background-repeat:no-repeat, no-repeat, repeat-x;
-	text-shadow: 0.03em 0 $white, -0.03em 0 $white, 0 0.03em $white, 0 -0.03em $white, 0.06em 0 $white, -0.06em 0 $white, 0.09em 0 $white, -0.09em 0 $white, 0.12em 0 $white, -0.12em 0 $white, 0.15em 0 $white, -0.15em 0 $white;
+	text-shadow: 0.03em 0 $color-primary-5, -0.03em 0 $color-primary-5, 0 0.03em $color-primary-5, 0 -0.03em $color-primary-5, 0.06em 0 $color-primary-5, -0.06em 0 $color-primary-5, 0.09em 0 $color-primary-5, -0.09em 0 $color-primary-5, 0.12em 0 $color-primary-5, -0.12em 0 $color-primary-5, 0.15em 0 $color-primary-5, -0.15em 0 $color-primary-5;
 	background-position: 0 87%,100% 87%,0 87%;
 }
 a:hover{
-    color:$color-complement-1;
-	background:linear-gradient($white, $white),linear-gradient($white, $white), linear-gradient($color-complement-1, $color-complement-1);
+    color:$color-secondary-1;
+	background:linear-gradient($color-primary-5, $color-primary-5),linear-gradient($color-primary-5, $color-primary-5), linear-gradient($color-secondary-1, $color-secondary-1);
 	background-size:.05em 1px, .05em 1px, 1px, 1px;
 	background-repeat:no-repeat, no-repeat, repeat-x;
-	text-shadow: 0.03em 0 $white, -0.03em 0 $white, 0 0.03em $white, 0 -0.03em $white, 0.06em 0 $white, -0.06em 0 $white, 0.09em 0 $white, -0.09em 0 $white, 0.12em 0 $white, -0.12em 0 $white, 0.15em 0 $white, -0.15em 0 $white;
+	text-shadow: 0.03em 0 $color-primary-5, -0.03em 0 $color-primary-5, 0 0.03em $color-primary-5, 0 -0.03em $color-primary-5, 0.06em 0 $color-primary-5, -0.06em 0 $color-primary-5, 0.09em 0 $color-primary-5, -0.09em 0 $color-primary-5, 0.12em 0 $color-primary-5, -0.12em 0 $color-primary-5, 0.15em 0 $color-primary-5, -0.15em 0 $color-primary-5;
 	background-position: 0 87%,100% 87%,0 87%;
 }
 
@@ -266,7 +266,7 @@ fieldset{
 		-webkit-transition:-webkit-transform 150ms, opacity 5s;
 		font-size:.750em;
 		font-family:$secondary-stack;
-		color:$dark-gray;
+		color:$color-primary-0;
 		text-transform:uppercase;
 		letter-spacing:.05em;		
 		span{
@@ -281,21 +281,21 @@ fieldset{
 		line-height: 20px;
 		width: 100%;
 		transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
-		border:2px solid $gray;
+		border:2px solid $color-primary-1;
 		font-family:$secondary-stack;
 		-webkit-appearance:none;
 		border-radius:0px;		
 	}
 	select{
 		padding:15px 0px 15px 10px;
-		background:$white url('/assets/img/common/down-arrow.png') no-repeat 95% 47%;
+		background:$color-primary-5 url('/assets/img/common/down-arrow.png') no-repeat 95% 47%;
 		background-size:5%;
 	}
 	input{
-		color:$black;	
+		color:$color-primary-3;	
 	}
 	input:focus, select:focus{
-		border-bottom:2px solid $color-complement-4;	
+		border-bottom:2px solid $color-secondary-4;	
 	}
 	
 }

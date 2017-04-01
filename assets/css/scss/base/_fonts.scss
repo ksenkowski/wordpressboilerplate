@@ -1,38 +1,8 @@
-@font-face {
-    font-family: 'futhark';
-  src: url("/assets/fonts/customfuthark-webfont.eot");
-  src: url("/assets/fonts/customfuthark-webfont.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/customfuthark-webfont.woff") format("woff"), url("/assets/fonts/customfuthark-webfont.ttf") format("truetype"), url("/assets/fonts/customfuthark-webfont.svg#customfutharkmedium") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-    font-family: 'gutenberg';
-    src: url('/assets/fonts/gutenbergc.eot');
-    src: url('/assets/fonts/gutenbergc.eot?#iefix') format('embedded-opentype'),
-         url('/assets/fonts/gutenbergc.woff2') format('woff2'),
-         url('/assets/fonts/gutenbergc.woff') format('woff'),
-         url('/assets/fonts/gutenbergc.ttf') format('truetype'),
-         url('/assets/fonts/gutenbergc.svg#alot_gutenberg_cregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
-}
-$primary-stack			:"Libre Baskerville", Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
-$secondary-stack		:'Ubuntu', sans-serif; 
+$primary-stack			:'Open Sans', sans-serif;
+$secondary-stack		:'Permanent Marker',sans-serif; 
 $tertiary-stack			:"Lucida Bright", Georgia, serif;
-$futhark				:'futhark', serif;
-$gutenberg				:'gutenberg', serif;
-$courier				:'Courier', monospace,serif;
 $base-font-size			:16px;
 
-.gutenberg{
-	font-family:$gutenberg !important;
-	font-size:em(42px);
-}
-.futhark{
-	font-family:$futhark;
-	font-size:32px;	
-}
-.courier{
-	font-family:$courier;
+.marker{
+	font-family:$secondary-stack;	
 }
