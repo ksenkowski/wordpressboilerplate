@@ -313,42 +313,47 @@ remove_filter('the_excerpt', 'wpautop');
 	Custom Post Types
 \*------------------------------------*/
 
-// Create 1 Custom Post type for a Demo, called HTML5-Blank
-function create_post_type_html5(){
-    register_taxonomy_for_object_type('category', 'html5-blank'); // Register Taxonomies for Category
-    register_taxonomy_for_object_type('post_tag', 'html5-blank');
-    register_post_type('html5-blank', // Register Custom Post Type
+function create_post_type(){
+    register_taxonomy_for_object_type('category', 'event');
+	// Register Taxonomies for Category
+    register_taxonomy_for_object_type('post_tag', 'event');
+	// Register Custom Post Type
+    register_post_type('event', 
         array(
         'labels' => array(
-            'name' => __('HTML5 Blank Custom Post', 'html5blank'), // Rename these to suit
-            'singular_name' => __('HTML5 Blank Custom Post', 'html5blank'),
-            'add_new' => __('Add New', 'html5blank'),
-            'add_new_item' => __('Add New HTML5 Blank Custom Post', 'html5blank'),
-            'edit' => __('Edit', 'html5blank'),
-            'edit_item' => __('Edit HTML5 Blank Custom Post', 'html5blank'),
-            'new_item' => __('New HTML5 Blank Custom Post', 'html5blank'),
-            'view' => __('View HTML5 Blank Custom Post', 'html5blank'),
-            'view_item' => __('View HTML5 Blank Custom Post', 'html5blank'),
-            'search_items' => __('Search HTML5 Blank Custom Post', 'html5blank'),
-            'not_found' => __('No HTML5 Blank Custom Posts found', 'html5blank'),
-            'not_found_in_trash' => __('No HTML5 Blank Custom Posts found in Trash', 'html5blank')
+            'name' => __('Events', 'event'),
+            'singular_name' => __('Event', 'event'),
+            'add_new' => __('Add New', 'event'),
+            'add_new_item' => __('Add New Event', 'event'),
+            'edit' => __('Edit', 'event'),
+            'edit_item' => __('Edit Event', 'event'),
+            'new_item' => __('New Event', 'event'),
+            'view' => __('View Events', 'event'),
+            'view_item' => __('View Event', 'event'),
+            'search_items' => __('Search Events', 'event'),
+            'not_found' => __('No Eventss found', 'event'),
+            'not_found_in_trash' => __('No Events found in Trash', 'event')
         ),
         'public' => true,
-        'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
+		// Allows your posts to behave like Hierarchy Pages
+        'hierarchical' => true, 
         'has_archive' => true,
+		// Go to Dashboard for supports - add custom-fields for ACF support
         'supports' => array(
             'title',
             'editor',
             'excerpt',
             'thumbnail'
-        ), // Go to Dashboard Custom HTML5 Blank post for supports
-        'can_export' => true, // Allows export in Tools > Export
+        ), 
+		// Allows export in Tools > Export
+        'can_export' => true, 
+		// Add Category and Post Tags support
         'taxonomies' => array(
             'post_tag',
             'category'
-        ) // Add Category and Post Tags support
+        ) 
     ));
 }
-add_action('init', 'create_post_type_html5');
+add_action('init', 'create_post_type');
 
 ?>
