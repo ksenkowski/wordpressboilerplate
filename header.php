@@ -29,19 +29,20 @@
 
 			<!-- header -->
 			<header class="header" role="banner">
+				<nav class="menu slide-left" role="navigation">
+					<button class="close-menu">X</button>
+					<?php if (function_exists(boilerplate_nav())) boilerplate_nav(); ?>
+				</nav>
+				<div class="mask"></div>
 				<div class="content">
 					<!-- logo -->
 					<div class="span-1 col">
-						<a href="<?php echo home_url(); ?>">
+						<button class="open-menu">&#9776;</button>
+						<!-- <a href="<?php echo home_url(); ?>">
 							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo.svg" onerror="<?php echo get_template_directory_uri(); ?>/assets/img/logo.png'" class="logo">
-						</a>
+						</a> -->
 				</div>
 				<div class="span-11 col">
-					<!-- nav -->
-					<nav class="nav" role="navigation">
-						<?php boilerplate_nav(); ?>
-					</nav>
-					<!-- /nav -->
 				</div>
 				</div>
 			</header>

@@ -28,27 +28,35 @@ if (function_exists('add_theme_support')){
 
 // Boilerplate navigation
 function boilerplate_nav(){
-	wp_nav_menu(
-	array(
-		'theme_location'  => 'header-menu',
-		'menu'            => '',
-		'container'       => 'div',
-		'container_class' => 'menu-{menu slug}-container',
-		'container_id'    => '',
-		'menu_class'      => 'menu',
-		'menu_id'         => '',
-		'echo'            => true,
-		'fallback_cb'     => 'wp_page_menu',
-		'before'          => '',
-		'after'           => '',
-		'link_before'     => '',
-		'link_after'      => '',
-		'items_wrap'      => '<ul>%3$s</ul>',
-		'depth'           => 0,
-		'walker'          => ''
-		)
-	);
+	//Menu Slug
+	$menuName = 'main-menu';
+	if(($locations = get_nav_menu_locations()) && isset($locations[$menuName])){
+		$menu = wp_get_nav_menu_object($locations[$menuName]);
+		$menuItems = wp_get_nav_menu_items($menu->term_id);
+		
+		$menuList .= "\t\t\t\t". '<ul class="menu-items">' ."\n";
+		foreach ((array) $menuItems as $key => $menuItem) {
+			$title = $menuItem->title;
+			$url = $menuItem->url;
+			$menuList .= "\t\t\t\t\t". '<li class="menu-item"><a href="'. $url .'">'. $title .'</a></li>' ."\n";
+		}
+		$menuList .= "\t\t\t\t". '</ul>' ."\n";
+	} else {
+		// $menu_list = '<!-- no list defined -->';
+	}
+	echo $menuList;	
 }
+
+// Register HTML5 Blank Navigation
+function register_boilerplate_menu(){
+    register_nav_menus(array( // Using array to specify more menus if needed
+        'main-menu' => __('Header Menu', 'boilerplate'), // Main Navigation
+        'sidebar-menu' => __('Sidebar Menu', 'boilerplate'), // Sidebar Navigation
+        'extra-menu' => __('Extra Menu', 'boilerplate') // Extra Navigation if needed (duplicate as many as you need!)
+    ));
+}
+add_action('init', 'register_boilerplate_menu'); // Add HTML5 Blank Menu
+
 
 // Load cripts (header.php)
 function boilerplate_header_scripts(){
@@ -94,15 +102,6 @@ function boilerplate_styles(){
 }
 add_action('wp_enqueue_scripts', 'boilerplate_styles'); 
 
-// Register Navigation
-function register_boilerplate_menu(){
-    register_nav_menus(array( // Using array to specify more menus if needed
-        'header-menu' => __('Header Menu', 'boilerplate'), // Main Navigation
-        'sidebar-menu' => __('Sidebar Menu', 'boilerplate'), // Sidebar Navigation
-        'extra-menu' => __('Extra Menu', 'boilerplate') // Extra Navigation if needed (duplicate as many as you need!)
-    ));
-}
-add_action('init', 'register_boilerplate_menu'); 
 
 // Remove the <div> surrounding the dynamic navigation to cleanup markup
 function my_wp_nav_menu_args($args = ''){

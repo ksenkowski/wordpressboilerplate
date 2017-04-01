@@ -5,7 +5,14 @@
 		'use strict';
 		
 		// DOM ready, take it away
-		console.log('am I updating?')
+		$('.open-menu').on('click', function(e){
+			e.preventDefault();
+			$('.slide-left, .mask').toggleClass('active');
+		});
+		$('.close-menu').on('click', function(e){
+			e.preventDefault();
+			$('.slide-left, .mask').toggleClass('active');
+		});
 		
 	});
 	
