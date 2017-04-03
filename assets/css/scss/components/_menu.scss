@@ -92,6 +92,10 @@
 	appearance: none;
 	cursor: pointer;
 	color:$color-primary-5;
+	font-size:rem(30px);
+	height:44px;
+	width:44px;
+	background:none;
 }
 body{
 	.active-menu{
