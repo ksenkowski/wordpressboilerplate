@@ -20,19 +20,9 @@ var paths = require('./assets/config/paths');
 
 gulp.task( 'browser-sync', function() {
   browserSync.init( {
-    proxy: paths.siteDir,
-
-    // `true` Automatically open the browser with BrowserSync live server.
-    // `false` Stop the browser from automatically opening.
+    proxy: './assets/',
     open: false,
-
-    // Inject CSS changes.
-    // Commnet it to reload browser for every CSS change.
     injectChanges: true,
-
-    // Use a specific port (instead of the one auto-detected by Browsersync).
-    // port: 7000,
-
   } );
 });
 
@@ -47,7 +37,6 @@ gulp.task('styles', function(){
 		.pipe(cleancss())
 		// .pipe(gulp.dest(paths.jekyllCssFiles))
 		.pipe(gulp.dest('./'))
-		.pipe(browserSync.stream())
 		.on('error', gutil.log);
 });
 
@@ -73,8 +62,7 @@ gulp.task('scripts', function(){
 gulp.task('images', function(){
 	return gulp.src(paths.imageFilesGlob)
 		.pipe(imagemin())
-		.pipe(gulp.dest('./assets/img/'))
-	.pipe(browserSync.stream());
+	.pipe(gulp.dest('./assets/img/'));
 });
 
 // Static Server + watching files.

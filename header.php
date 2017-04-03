@@ -32,6 +32,12 @@
 				<nav class="menu slide-left" role="navigation">
 					<button class="close-menu">X</button>
 					<?php if (function_exists(boilerplate_nav())) boilerplate_nav(); ?>
+					
+					<div class="button-group">
+						<div class="social-buttons"></div>
+						<a class="button secondary-dark-bg" href="donate.com">Contact Us</a>
+						<a class="button primary-dark-bg" href="donate.com">Donate</a>
+					</div>
 				</nav>
 				<div class="mask"></div>
 				<div class="content">

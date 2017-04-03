@@ -6,7 +6,7 @@
 body{
 	font-family:$primary-stack;
 	font-weight:normal;
-	font-size: 1em;
+	font-size: rem(16px);
     line-height: 1.25em;
     font-weight: 300;
 	color:$color-primary-3;
@@ -51,7 +51,7 @@ img {
 p{
 	margin:0;
 	line-height:160%;
-	font-size:em(20px);
+	font-size:rem(20px);
 }
 s{
 	text-decoration:line-through;
@@ -91,17 +91,17 @@ hr{
 	border-top:1px solid $color-primary-5;
 }
 code{
-	padding:em(16px);
+	padding:rem(16px);
 	line-height:125%;
 	display:block;
-	font-size:em(17px);
+	font-size:rem(17px);
 }
 blockquote {
 	padding: 0px;
 	margin: 1em 0;
 	p {
 		margin-bottom: 0;
-		font-size: 1.2em;
+		font-size: rem(18px);
 		font-weight: 700;
 		line-height: 1.6em;
 		text-indent:0;
@@ -135,27 +135,27 @@ h6 {
 	margin:0;
 }
 h1{
-	font-size:em(46px);
-	line-height:125%;
+	font-size:rem(40px);
+	line-height:120%;
 }
 h2{
-	font-size:em(38px);
+	font-size:rem(38px);
 	line-height:100%;
 }
 h3{
-	font-size:em(28px);
+	font-size:rem(28px);
 	line-height:100%;
 }
 h4{
-	font-size:em(25px);
+	font-size:rem(25px);
 	line-height:100%;
 }
 h5{
-	font-size:em(22px);
+	font-size:rem(22px);
 	line-height:100%;
 }
 h6{
-	font-size:em(20px);
+	font-size:rem(20px);
 	line-height:100%;
 }
 /* ==========================================================================
@@ -167,7 +167,7 @@ ol {
 	line-height:125%;
 	margin:0;
 	line-height:160%;
-	font-size:em(20px);
+	font-size:rem(20px);
 }
 ul ul,
 ul ol,
@@ -179,8 +179,8 @@ ul.spaced-list, ol.spaced-list {
 	margin-bottom:15px;
 	margin-top:15px;
 	ul.unspaced-list{
-		margin-top:em(20px);
-		margin-bottom:em(20px);
+		margin-top:rem(20px);
+		margin-bottom:rem(20px);
 		li{
 				margin-bottom:0;
 				margin-top:0;
@@ -271,7 +271,7 @@ fieldset{
 		width:auto;
 		-webkit-transform:translate(0,0);
 		-webkit-transition:-webkit-transform 150ms, opacity 5s;
-		font-size:.750em;
+		font-size:rem(14px);
 		font-family:$secondary-stack;
 		color:$color-primary-0;
 		text-transform:uppercase;
@@ -283,7 +283,7 @@ fieldset{
 	}
 	select, input[type="text"]{
 		background: transparent;
-		font-size: 1.2em;
+		font-size: rem(18px);
 		padding: 15px 0px 5px 0px;
 		line-height: 20px;
 		width: 100%;
