@@ -49,6 +49,12 @@
 						</a> -->
 				</div>
 				<div class="span-11 col">
+					<div class="button-group">
+						<ul class="unstyled">
+							<li><a class="button secondary-dark-bg">Contact Us</a></li>
+							<li><a class="button primary-dark-bg">Donate</a></li>
+						</ul>
+					</div>
 				</div>
 				</div>
 			</header>

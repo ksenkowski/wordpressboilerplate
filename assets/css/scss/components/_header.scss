@@ -1,3 +1,22 @@
 .header{
-	
+	height:60px;
+	padding:10px 2%;
+	background-color:$color-primary-0;
+	position:fixed;
+	z-index:25;
+	.button-group{
+		float:right;
+		visibility:hidden;
+		ul{
+			margin:0;
+			padding:0;			
+			li{
+				float:right;
+				margin-right:10px;
+				.button{
+					max-width:120px;
+				}
+			}
+		}
+	}
 }
