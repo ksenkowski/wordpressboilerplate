@@ -12,7 +12,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="description" content="<?php bloginfo('description'); ?>">
-		<link rel='stylesheet' id='openSansFont-css'  href='http://fonts.googleapis.com/css?family=Open+Sans&#038;ver=4.7.3' type='text/css' media='all' />
+		<link rel='stylesheet' id='openSansFont-css'  href='https://fonts.googleapis.com/css?family=Open+Sans:400,800' type='text/css' media='all' />
 		<link rel='stylesheet' id='permanentMarkerFont-css'  href='http://fonts.googleapis.com/css?family=Permanent+Marker&#038;ver=4.7.3' type='text/css' media='all' />
 		<?php wp_head(); ?>
 		
@@ -42,14 +42,13 @@
 				<div class="mask"></div>
 				<div class="content">
 					<!-- logo -->
-					<div class="span-1 col">
+					<div class="span-12 col">
 						<button class="open-menu">&#9776;</button>
 						<!-- <a href="<?php echo home_url(); ?>">
 							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo.svg" onerror="<?php echo get_template_directory_uri(); ?>/assets/img/logo.png'" class="logo">
 						</a> -->
-				</div>
-				<div class="span-11 col">
-					<div class="button-group">
+					<img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo.svg" onerror="this.src='<?php echo get_template_directory_uri(); ?>/assets/img/logo-header.png'" class="logo">
+					<div class="button-group sticky">
 						<ul class="unstyled">
 							<li><a class="button secondary-dark-bg">Contact Us</a></li>
 							<li><a class="button primary-dark-bg">Donate</a></li>

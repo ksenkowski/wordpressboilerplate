@@ -3,6 +3,8 @@
 	$(function () {
 		
 		'use strict';
+		
+		// DOM ready, take it away
 		$('.open-menu').on('click', function(e){
 			e.preventDefault();
 			$('.slide-left, .mask').toggleClass('active');
@@ -12,18 +14,19 @@
 			$('.slide-left, .mask').toggleClass('active');
 		});
 		
-		var theOffset = $('.mission').offset().top;
+		var theOffset = $('.hero').offset().top;
 		
 		$(window).scroll(function(){
-		  var sticky = $('.header .sticky'),
-		      scrollPosition = $(window).scrollTop();
-			  console.log(theOffset + ', ' + scrollPosition);
-		  if (scrollPosition >= theOffset){				  
+		  var sticky = $('.sticky .button-group'),
+		      scroll = $(window).scrollTop();
+			  console.log(sticky ', ' scroll);
+		  if (scroll >= theOffset){				  
 			  sticky.addClass('show');
 		  }else{
 		  	sticky.removeClass('show');
 		  }
 		});		
+		
 		
 	});
 	

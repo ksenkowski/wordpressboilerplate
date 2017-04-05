@@ -8,16 +8,16 @@ $attribution = the_field('attribution');
 
 	<main role="main">
 		<?php if (have_posts()): while (have_posts()) : the_post(); ?>
-			<section class="hero">
+			<section class="hero parrallax">
 				<div class="content">
 					<h1 class="marker"><?php 
 						if($tagline){
 							echo $tagline;
 						}else{
-							echo 'No Value';
+							echo 'The Impactful Provocative Tagline Goes Here';
 						}
 						?></h1>
-					<div class="button-group">
+					<div class="button-group sticky">
 						<a class="button secondary-dark-bg" href="">Contact Us</a>
 						<a class="button primary-dark-bg" href="">Donate</a>
 					</div>
@@ -26,31 +26,31 @@ $attribution = the_field('attribution');
 			<section class="mission">
 				<div class="content">
 					<h2 class="marker">Our Mission</h2>
-					<p><?php
+					<p class="text-center"><?php
 						if($mission){
 							echo $mission;
 						}else{
-							echo 'No Value';
+							echo 'MASK is starting on a grass roots level to come together and organize parents with emphasis on the power of mothers, to become a force in the fight against the violence. ';
 						}					
 					?></p>
 					<a class="button secondary-dark-bg" href="">Learn More</a>
 				</div>
 			</section>
 			<section class="who-what">
-				<div class="content">
-					<div class="col span-6">
-						<h2>Who We Are</h2>
-						<p><?php
+				<div class="content gutters">
+					<div class="col span-6 who">
+						<h2 class="marker">Who We Are</h2>
+						<?php
 							if($who){
 								echo $who;
 							}else{
-								echo 'No Value';
+								echo '<p>M.A.S.K. is putting an end to senseless gun violence and adolescent outrage on our neighborhood streets. By injecting a motherly presence, we establish love and peace on the block, giving the community and our children a future.</p><p>MASK is a force that empowers us to be the voice of change, safety, and presence for our families and communities. As individuals joined together, our many voices are ampliied as one.</p>';
 							}
-						?></p>
+						?>
 						<a class="button primary-light-bg" href="">Read More</a>
 					</div>
 					<div class="col span-6">
-						<h2>Where We're Posted</h2>
+						<h2 class="marker">Where We're Posted</h2>
 						<a class="button primary-light-bg" href="">Read More</a>
 						
 					</div>
@@ -62,14 +62,14 @@ $attribution = the_field('attribution');
 						if($quote){
 							echo $quote;
 						}else{
-							echo 'No Value';
+							echo 'Everybody is starting to realize that gun violence is not just a south side problem. It’s an American problem.';
 						}
 					?></p>
 					<p class="attribution">- <?php
 						if($attribution){
 							echo $attribution;
 						}else{
-							echo 'No Value';
+							echo 'Tamar Manasseh';
 						}
 					?></p>
 				</blockquote>

@@ -53,7 +53,9 @@ gulp.task('scripts', function(){
 		paths.jsFiles + '/libs' + paths.jsPattern,
 		paths.jsFiles + '/*.js'
 	]).pipe(concat('scripts.js'))
-		.pipe(uglify())
+		.pipe(uglify().on('error', function(e){
+			console.log(e);
+		}))
 		.pipe(gulp.dest('./'))
 	.on('error', gutil.log);
 });

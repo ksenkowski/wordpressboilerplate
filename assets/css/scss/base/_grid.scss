@@ -5,6 +5,8 @@
 	margin:0 auto;
 	min-width:19em;
 	position:relative;
+	padding-left:2%;
+	padding-right:2%;
 //	overflow:auto;
 	@include clearfix;
 	@include breakpoint(mobile){
@@ -28,7 +30,8 @@
 		.span-12 { width: 100%; }
 	}
 	@include breakpoint(desktop){
-		max-width:65.000em;
+		max-width:64.000em;
+		
 	}
 	&.non-responsive{
 		.span-1 { width: 8.33333333333%; }
