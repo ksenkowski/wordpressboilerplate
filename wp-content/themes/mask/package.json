@@ -1,40 +1,18 @@
 {
-  "name": "Boilerplate",
-  "version": "1.0.0",
-  "description": "A Wordpress Boilerplate theme",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ksenkowski/wordpressboilerplate"
-  },
-  "author": "Keith Senkowski",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ksenkowski/wordpressboilerplate/issues"
-  },
-  "homepage": "https://github.com/ksenkowski/wordpressboilerplate#readme",
-  "devDependencies": {
-	  "autoprefixer": "^6.4.0",
-	  "browser-sync": "^2.14.0",
-	  "del": "^2.2.2",
-	  "gulp": "^3.9.1",
-	  "gulp-clean-css": "^2.0.12",
-	  "gulp-concat": "^2.6.0",
-	  "gulp-imagemin": "^3.0.3",
-	  "gulp-jshint": "^2.0.1",
-	  "gulp-notify": "^2.2.0",
-	  "gulp-postcss": "^6.1.1",
-	  "gulp-rename": "^1.2.2",
-	  "gulp-ruby-sass": "^2.1.0",
-	  "gulp-run": "^1.7.1",
-	  "gulp-sass": "^2.3.2",
-	  "gulp-shell": "^0.5.2",
-	  "gulp-uglify": "^2.0.0",
-	  "gulp-util": "^3.0.7",
-	  "jshint": "^2.9.3",
-	  "run-sequence": "^1.2.2"
+  "dependencies": {
+    "autoprefixer": "^6.7.7",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^3.2.0",
+    "gulp-notify": "^3.0.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-postcss": "^6.4.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-svgmin": "^1.2.3",
+    "gulp-uglify": "^2.1.2",
+    "gulp-util": "^3.0.8",
+    "postcss-scss": "^0.4.1",
+    "run-sequence": "^1.2.2"
   }
 }

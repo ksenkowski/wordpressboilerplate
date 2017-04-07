@@ -12,8 +12,14 @@
 	@include breakpoint(mobile){
 		min-width:31.250em;
 	}
+	
 	@include breakpoint(portrait){
 		min-width:48.000em;
+		&.flex{
+			display:flex;
+		}
+		
+		
 	}
 	@include breakpoint(portrait){
 		.span-1 { width: 8.33333333333%; }

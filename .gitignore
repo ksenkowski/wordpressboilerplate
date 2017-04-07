@@ -38,3 +38,6 @@ wordpress
 # Theme-specific files
 wp-content/themes/mask/dist
 
+# Temp ignore of local old mask theme
+wp-content/themes/mask2
+

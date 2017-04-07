@@ -1,84 +1,116 @@
-// Define variables.
-var autoprefixer = require('autoprefixer');
-var browserSync  = require('browser-sync').create();
-var cleancss     = require('gulp-clean-css');
-var concat       = require('gulp-concat');
-var del          = require('del');
-var gulp         = require('gulp');
-var gutil        = require('gulp-util');
-var imagemin     = require('gulp-imagemin');
-var notify       = require('gulp-notify');
-var postcss      = require('gulp-postcss');
-var rename       = require('gulp-rename');
-var run          = require('gulp-run');
-var runSequence  = require('run-sequence');
-var sass         = require('gulp-ruby-sass');
-var uglify       = require('gulp-uglify');
+// REQUIRES
+var gulp = require('gulp'),
+    sass = require('gulp-sass'),
+    autoprefixer = require('autoprefixer'),
+    uglify = require('gulp-uglify'),
+    concat = require('gulp-concat'),
+    imagemin = require('gulp-imagemin'),
+    svgmin = require('gulp-svgmin'),
+    del = require('del'),
+    runSequence = require('run-sequence'),
+    plumber = require('gulp-plumber'),
+    notify = require('gulp-notify'),
+    util = require('gulp-util'),
+    postcss = require('gulp-postcss');
 
-//Inculde paths file
-var paths = require('./assets/config/paths');
+// PATHS
+var root = '';
+var paths = {
+  src: root + 'src',
+  dist: root + 'dist',
+  scss: root + 'src/scss',
+  jssrc: root + 'src/js-src',
+  imgsrc: root + 'src/img-src',
+  fontssrc: root + 'src/fonts-src',
+  css: root + 'dist/css',
+  js: root + 'dist/js',
+  img: root + 'dist/img',
+  fonts: root + 'dist/fonts'
+};
 
-gulp.task( 'browser-sync', function() {
-  browserSync.init( {
-    proxy: './assets/',
-    open: false,
-    injectChanges: true,
-  } );
+// ERROR HANDLING
+var errorHandler = {
+  errorHandler: notify.onError({
+    title: 'Gulp',
+    message: 'Error: <%= error.message %>'
+  })
+};
+
+// SASS
+gulp.task('sass', function(){
+  gulp
+    .src(paths.scss + '/**/*.scss')
+    .on('error', sass.logError)
+    .pipe(sass())
+    .pipe(postcss([
+      autoprefixer({ browsers: ['last 2 versions'] })
+    ], { syntax: require('postcss-scss') }))
+    .pipe(gulp.dest(paths.css))
 });
 
-
-//Create main.css file
-gulp.task('styles', function(){
-	return sass(paths.sassFiles + '/style.scss', {
-		style: 'compressed',
-		trace: true,
-		loadPath: [paths.sassFiles]
-	}).pipe(postcss([autoprefixer({browsers: ['last 2 versions'] })]))
-		.pipe(cleancss())
-		// .pipe(gulp.dest(paths.jekyllCssFiles))
-		.pipe(gulp.dest('./'))
-		.on('error', gutil.log);
+// JAVASCRIPT
+gulp.task('javascript', function(){
+  gulp.src([paths.jssrc + '/**/*', !paths.jssrc + '/thirdparty/**/*'])
+      .pipe(uglify())
+      .on('error', function (err) { util.log(util.colors.red('[Error]'), err.toString()); })
+      // .pipe(concat('main.js'))
+      .pipe(gulp.dest(paths.js));
 });
 
-//Delete CSS
-gulp.task('clean', function(callback) {
-    del(['./style.css', './scripts.js', './assets/img/' + paths.imagePattern ]);
-    callback();
-});
-
-
-//Process JS
-gulp.task('scripts', function(){
-	return gulp.src([
-		paths.jsFiles + '/libs' + paths.jsPattern,
-		paths.jsFiles + '/*.js'
-	]).pipe(concat('scripts.js'))
-		.pipe(uglify().on('error', function(e){
-			console.log(e);
-		}))
-		.pipe(gulp.dest('./'))
-	.on('error', gutil.log);
-});
-
-//Optimize and copy over images
+// IMAGES TASK
 gulp.task('images', function(){
-	return gulp.src(paths.imageFilesGlob)
-		.pipe(imagemin())
-	.pipe(gulp.dest('./assets/img/'));
+  gulp.src(paths.imgsrc + '/**/*.{jpg,png,gif,ico}')
+    .pipe(imagemin({
+      optimizationLevel: 7,
+      progressive: true
+    }))
+    .pipe(gulp.dest(paths.img));
+  gulp.src(paths.imgsrc + '/**/*.svg')
+    .pipe(svgmin())
+    .pipe(gulp.dest(paths.img));
 });
 
-// Static Server + watching files.
-// Note: passing anything besides hard-coded literal paths with globs doesn't
-// seem to work with gulp.watch().
-	gulp.task('default', ['clean', 'styles', 'scripts', 'images', 'browser-sync'], function() {
+// FONTS TASK
+gulp.task('fonts', function(){
+  gulp.src(paths.fontssrc + '/**/*')
+      .pipe(gulp.dest(paths.fonts));
+});
 
-	    // Watch .scss files; changes are piped to browserSync.
-	    gulp.watch('./assets/css/**/*.scss', ['styles']);
+// CLEAN TASK
+gulp.task('clean', function(){
+  del([
+    paths.css + '/*',
+    paths.js + '/*',
+    paths.img + '/*'
+  ]);
+});
 
-	    // Watch .js files.
-	    gulp.watch('./assets/js/**/*.js', ['scripts']);
+// PRODUCTION BUILD TASK
+gulp.task('build', function(buildDone){
+  runSequence(
+    'clean',
+    'fonts',
+    'javascript',
+    'images',
+    'sass',
+    buildDone
+  );
+});
 
-	    // Watch image files; changes are piped to browserSync.
-	    gulp.watch('./assets/img/**/*', ['images']);
+// WATCH TASK
+gulp.task('watch', function(){
+  gulp.watch(paths.scss + '/**/*.scss', ['sass']);
+  gulp.watch(paths.jssrc + '/**/*', ['javascript']);
+  gulp.watch(paths.imgsrc + '/**/*', ['images']);
+});
 
-	});
+// DEFAULT TASK
+gulp.task('default', function(defaultDone){
+  runSequence(
+    'build',
+    'watch',
+    defaultDone
+  );
+});
+
+
