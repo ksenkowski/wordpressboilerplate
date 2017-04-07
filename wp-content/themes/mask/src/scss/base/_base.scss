@@ -18,7 +18,7 @@ main, header, footer{
 	width:100%;
 }
 article{
-	
+
 }
 /* ==========================================================================
    IMAGES & VIDEOS
@@ -45,7 +45,7 @@ img {
 	}
 }
 /* ==========================================================================
-   TYPOGRAPHY 
+   TYPOGRAPHY
    ========================================================================== */
 p{
 	margin:0;
@@ -242,7 +242,7 @@ p{
 		background-repeat:no-repeat, no-repeat, repeat-x;
 		text-shadow: 0.03em 0 $color-primary-5, -0.03em 0 $color-primary-5, 0 0.03em $color-primary-5, 0 -0.03em $color-primary-5, 0.06em 0 $color-primary-5, -0.06em 0 $color-primary-5, 0.09em 0 $color-primary-5, -0.09em 0 $color-primary-5, 0.12em 0 $color-primary-5, -0.12em 0 $color-primary-5, 0.15em 0 $color-primary-5, -0.15em 0 $color-primary-5;
 		background-position: 0 87%,100% 87%,0 87%;
-		
+
 	}
 }
 
@@ -261,7 +261,7 @@ textarea {
 fieldset{
 	position: relative;
 	display: inline;
-	width:100%;	
+	width:100%;
 	height:auto;
 	background:transparent;
 	box-shadow: 0 0 8px transparent;
@@ -274,7 +274,7 @@ fieldset{
 		font-family:$secondary-stack;
 		color:$color-primary-0;
 		text-transform:uppercase;
-		letter-spacing:.05em;		
+		letter-spacing:.05em;
 		span{
 			text-transform:none;
 			font-style:italic;
@@ -290,20 +290,20 @@ fieldset{
 		border:2px solid $color-primary-1;
 		font-family:$secondary-stack;
 		-webkit-appearance:none;
-		border-radius:0px;		
+		border-radius:0px;
 	}
 	select{
 		padding:15px 0px 15px 10px;
-		background:$color-primary-5 url('/assets/img/common/down-arrow.png') no-repeat 95% 47%;
+		background:$color-primary-5 url('/mask/wp-content/themes/mask/dist/img/common/down-arrow.png') no-repeat 95% 47%;
 		background-size:5%;
 	}
 	input{
-		color:$color-primary-3;	
+		color:$color-primary-3;
 	}
 	input:focus, select:focus{
-		border-bottom:2px solid $color-secondary-4;	
+		border-bottom:2px solid $color-secondary-4;
 	}
-	
+
 }
 
 /* ==========================================================================
@@ -313,7 +313,7 @@ fieldset{
 		display: block;
 		position: relative;
 		width: 100%;
-		
+
 		@include breakpoint(landscape){
 			display: table;
 			position: static;
@@ -339,7 +339,7 @@ fieldset{
 				@include breakpoint(landscape){
 					display:table-row;
 				}
-				
+
 			}
 			th{
 				display:block;
