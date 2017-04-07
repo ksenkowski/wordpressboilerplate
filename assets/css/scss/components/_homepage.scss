@@ -174,17 +174,53 @@
 		margin-bottom:20px;
 		border:1px solid $color-primary-2;
 		width:100%;
+		padding:20px;
+		position:relative;
+		h3{
+			font-size:rem(16px);
+			line-height:137.5%;
+			margin-bottom:10px;
+			font-weight:800;
+			a{
+				color:$color-primary-0;
+			}
+		}
+		p{
+			font-size:rem(12px);
+			margin-bottom:20px;
+			&.author{
+				font-weight:800;
+				margin:0;
+			}
+			&.category{
+				font-weight:800;
+				text-transform:uppercase;
+				margin:0;
+			}
+		}
+		.meta-group{
+			position:absolute;
+			bottom:20px;
+			left:20px;
+		}
+		
 		@include breakpoint(portrait){
-			width:100%;
-			height:auto;
+			width:240px;
+			height:250px;
 		}			
+		
+		@include breakpoint(landscape){
+			width:270px;
+			height:280px;
+		}			
+
 		@include breakpoint(desktop){
 			width:300px;
 			height:310px;
 		}			
 		
 		&.box-4, &.box-5, &.box-7, &.box-8{
-			@include breakpoint(landscape){
+			@include breakpoint(portrait){
 				margin-right:2%;
 			}			
 		}

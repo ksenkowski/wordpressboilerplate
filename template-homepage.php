@@ -136,7 +136,16 @@ $featuredImage = the_field('featured_image');
 					if ($count > 3):
 						
 						?>
-						<div class="col latest-boxes box-<?php echo $count; ?>"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></div>
+						<div class="col latest-boxes box-<?php echo $count; ?>">
+							<?php the_post_thumbnail(array(250,250)); ?>
+							<h3><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h3>
+							<p class="excerpt"><?php boilerplate_excerpt('boilerplate_index'); ?></p>
+							
+							<div class="meta-group">
+							<p class="author"><?php echo get_the_author(); ?> - <?php the_time('F j, Y'); ?></p>
+							<p class="category"><?php  the_category(', '); // Separated by commas ?></p>
+						</div>
+						</div>
 <?php endif; ?>
 		<?php endwhile;  ?>
 </div>

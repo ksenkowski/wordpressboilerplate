@@ -22,6 +22,9 @@
 	}
 	.button{
 		width:166px;
-		float:right;
+		float:left;
+		@include breakpoint(portrait){
+			float:right;
+		}
 	}
 }
