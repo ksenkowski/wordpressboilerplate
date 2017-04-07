@@ -91,7 +91,7 @@ $featuredImage = the_field('featured_image');
 					<h2 class="marker">The Latest</h2>
 						<a class="button secondary-light-bg" href="">See All Posts</a>
 				</div>
-				<div class="content">
+				<div class="content latest-featured">
 				<?php
 						$my_query = new WP_Query( 'posts_per_page=3' );
 						$count = 0;
@@ -101,27 +101,32 @@ $featuredImage = the_field('featured_image');
 						if ($count == 1):
 				?>
 
-					<div class="col span-6">
+					<div class="col span-8 latest-featured-left">
 						<?php
 						if($featuredImage): ?>
-							<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
-
+							<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                <span><?php the_title(); ?></span>
+                <p class="teaser">The Cook County Land Band (CCLB) has awarded MASK ownership of their half of the vacant lot at 75th and Stewart.</p>
+              </a>
 						<?php endif; ?>
-						<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
+						<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+              <span><?php the_title(); ?></span><br/>
+              <span class="teaser">The Cook County Land Band (CCLB) has awarded MASK ownership of their half of the vacant lot at 75th and Stewart.</span>
+            </a>
 					</div>
-					<div class="col span-6">
+					<div class="col span-4 latest-featured-small">
 						<?php elseif ($count == 2): ?>
-						<div class="top">
-							<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
+						<div class="latest-featured-top">
+							<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><span><?php the_title(); ?></span></a>
 						</div>
 						<?php elseif ($count == 3): ?>
-						<div class="bottom">
-							<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
+						<div class="latest-featured-bottom">
+							<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><span><?php the_title(); ?></span></a>
 						</div>
 
 					<?php endif; ?>
 					<?php endwhile; ?>
-				</div>
+				  </div>
 				</div>
 
 
