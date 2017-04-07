@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="<?php bloginfo('charset'); ?>">
 		<title><?php wp_title(''); ?><?php if(wp_title('', false)) { echo ' :'; } ?> <?php bloginfo('name'); ?></title>
-			<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+		<link rel='dns-prefetch' href='//fonts.googleapis.com' />
 
 		<link href="//www.google-analytics.com" rel="dns-prefetch">
         <link href="<?php echo get_template_directory_uri(); ?>/img/icons/favicon.ico" rel="shortcut icon">
@@ -14,6 +14,7 @@
 		<meta name="description" content="<?php bloginfo('description'); ?>">
 		<link rel='stylesheet' id='openSansFont-css'  href='https://fonts.googleapis.com/css?family=Open+Sans:400,800' type='text/css' media='all' />
 		<link rel='stylesheet' id='permanentMarkerFont-css'  href='http://fonts.googleapis.com/css?family=Permanent+Marker&#038;ver=4.7.3' type='text/css' media='all' />
+		<script src="https://use.fontawesome.com/70889c11f6.js"></script>
 		<?php wp_head(); ?>
 		
 		<script>

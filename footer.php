@@ -9,7 +9,7 @@
 				<li>Chicago, Illinois 60636</li>
 				<li></li>
 				<li class="phone"><a href="tel:7738859871">773.885.9871</a></li>
-				<li class="mail"><a href="mailto:administrator@getbehindthemask.org">administrator@getbehindthemask.org</a></li>
+				<li class="mail"><a href="mailto:administrator@ontheblock.org">administrator@ontheblock.org</a></li>
 			</ul>
 		</div>
 		<div class="col span-2">
@@ -27,7 +27,7 @@
 		(f[s].q=f[s].q||[]).push(arguments)},f[s].l=1*new Date();h=i.createElement(r),
 		l=i.getElementsByTagName(r)[0];h.async=1;h.src=e;l.parentNode.insertBefore(h,l)
 		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-		ga('create', 'UA-XXXXXXXX-XX', 'yourdomain.com');
+		ga('create', 'UA-96911779', 'ontheblock.org');
 		ga('send', 'pageview');
 		</script>
 
