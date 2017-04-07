@@ -1,71 +1,40 @@
-# Packages #
-############
-*.7z
-*.dmg
-*.gz
-*.bz2
-*.iso
-*.jar
-*.rar
-*.tar
-*.zip
-*.tgz
-*.map
+# ignore YeoPress configuration file since it contains password information
+.yeopress
 
-# Logs and databases #
-######################
-*.log
-*.sql
-
-# OS generated files #
-######################
-**.DS_Store*
-ehthumbs.db
-Icon?
-Thumbs.db
-._*
-
-# Vim generated files #
-######################
-*.un~
-
-# SASS #
-##########
-**/.sass-cache
-**/.sass-cache/*
-**/.map
-
-# Composer #
-##########
-vendors/composer/
-!assets/js/vendor/
-wpcs/
-composer.lock
-
-# Bower #
-##########
-assets/bower_components/*
-
-# Codekit #
-##########
-/codekit-config.json
-*.codekit
-**.codekit-cache/*
-
-# NPM #
-##########
+# As Yeoman assumes the usage of Bower and Grunt, ignore the below:
 node_modules
 
-# Compiled Files and Build Dirs #
-##########
-/README.html
-/build/
+# Ignore automatically generated cruft
+*.log
+.sass-cache
 
-# PhpStrom Project Files #
-.idea/
-library/vendors/composer
-assets/img/.DS_Store
-assets/sass/HTML
-assets/sass/Rails
-HTML
-Rails
+# Ignore config
+wp-config.php
+
+# Operating system files
+.Spotlight-V100
+.Trashes
+.DS_Store
+.DS_Store?
+ehthumbs.db
+Thumbs.db
+
+# WordPress + popular plugin generated — adapted from:
+# https://github.com/github/gitignore/blob/master/WordPress.gitignore
+sitemap.xml
+sitemap.xml.gz
+wp-content/advanced-cache.php
+wp-content/backup-db/
+wp-content/backups/
+wp-content/blogs.dir/
+wp-content/cache/
+wp-content/uploads/
+wp-content/upgrade/
+wp-content/wp-cache-config.php
+
+# Ignore wordpress submodule dir
+wordpress
+
+# Theme-specific files
+wp-content/themes/mask/dist
+
