@@ -13,7 +13,14 @@
 			</ul>
 		</div>
 		<div class="col span-2">
-			<div class="social-group"></div>
+			<div class="social-group">
+				<a href="https://twitter.com/TamarManasseh" target="_new">
+					<i class="fa fa-twitter" aria-hidden="true"></i>
+				</a>
+				<a href="https://www.facebook.com/Mothers-Against-Senseless-Killings-541764962534514/" target="_new">
+					<i class="fa fa-facebook" aria-hidden="true"></i>
+				</a>
+			</div>
 			<a class="button secondary-light-bg">Download Press Kit</a>
 		</div>
 	</div>

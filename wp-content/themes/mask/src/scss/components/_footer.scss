@@ -11,14 +11,27 @@
 			color:$color-primary-3;
 		}
 		.phone{
-			
+
 		}
 		.mail{
-			
+
 		}
 	}
 	.social-group{
-		
+		width:75px;
+    float:right;
+    @include clearfix;
+    margin-bottom:em(20px);
+    padding-right:em(10px);
+
+    i{
+      float:right;
+      color:$color-primary-1;
+
+      &.fa-facebook{
+        margin-right:em(10px);
+      }
+    }
 	}
 	.button{
 		width:166px;
