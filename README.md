@@ -1,4 +1,4 @@
-# Justin's MASK Wordpress Setup
+# MASK Wordpress Setup
 - Clone repo
 - Init Wordpress as a submodule by running `git submodule update --recursive`
 - Install NVM
@@ -10,3 +10,7 @@
 - `npm install` or `yarn` if you're one of the cool kids
 - Start MAMP
 - Run `gulp` in the theme dir to serve and watch
+
+#### Notes
+- Image paths in SASS are hard-coded right now, and will need to be updated for deployment to mirror the actual path
+- Zeppelin files at: https://app.zeplin.io/project.html#pid=58e4165aede24e07df3a09d4
