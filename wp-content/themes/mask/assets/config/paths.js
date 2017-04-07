@@ -1,7 +1,7 @@
 var paths = {};
 
 //Directory Locations
-paths.siteDir			=	'localhost:8888';	//Static site! 
+paths.siteDir			=	'localhost/mask';	//Static site! 
 
 //Asset File Locations
 paths.sassFiles = './assets/css';
