@@ -1,6 +1,6 @@
 # MASK Wordpress Setup
 - Clone repo
-- Init Wordpress as a submodule by running `git submodule update --recursive`
+- Init Wordpress as a submodule by running `git submodule update --init --recursive`
 - Install NVM
 - Install stable Node via NVM (7.4.0)
 - Run `nvm use` to pull node version from .nvmrc
