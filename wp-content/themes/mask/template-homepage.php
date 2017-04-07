@@ -153,6 +153,25 @@ $featuredImage = the_field('featured_image');
 			<section class="events">
 				<div class="content">
 					<h2 class="marker">Events</h2>
+          <ul class="events-list">
+            <?php for($i = 0; $i<=3; $i++){ ?>
+              <li class="single-event span-3">
+                <div class="single-event-container">
+                  <div class="event-header">
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                    <p>Chicago, IL</p>
+                  </div>
+                  <div class="event-body">
+                    <p class="event-title">Event Title</p>
+                    <div class="event-info">
+                      <em>Friday, April 7th, 2017</em>
+                      <p>7:00pm - 8:30pm</p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            <?php } ?>
+          </ul>
 				</div>
 			</section>
 
