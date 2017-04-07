@@ -46,9 +46,9 @@
 					<div class="span-12 col">
 						<button class="open-menu">&#9776;</button>
 						<!-- <a href="<?php echo home_url(); ?>">
-							<img src="<?php echo get_template_directory_uri(); ?>/dist/img/logo.svg" onerror="<?php echo get_template_directory_uri(); ?>/dist/img/logo.png'" class="logo">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo.svg" onerror="<?php echo get_template_directory_uri(); ?>/assets/img/logo.png'" class="logo">
 						</a> -->
-					<img src="<?php echo get_template_directory_uri(); ?>/dist/img/logo.svg" onerror="this.src='<?php echo get_template_directory_uri(); ?>/dist/img/logo-header.png'" class="logo">
+					<img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo.svg" onerror="this.src='<?php echo get_template_directory_uri(); ?>/assets/img/logo-header.png'" class="logo">
 					<div class="button-group sticky">
 						<ul class="unstyled">
 							<li><a class="button secondary-dark-bg">Contact Us</a></li>

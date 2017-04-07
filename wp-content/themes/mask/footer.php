@@ -1,13 +1,13 @@
 <footer class="footer" role="contentinfo">
 	<div class="content gutters">
 		<div class="col span-2">
-			<img src="<?php echo get_template_directory_uri(); ?>/dist/img/logo.png" class="logo">
+			<img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo.png" class="logo">
 		</div>
 		<div class="col span-8">
 			<ul class="unstyled">
 				<li>M.A.S.K., P.O. BOX 368755,</li>
 				<li>Chicago, Illinois 60636</li>
-				<li></li>
+				<li>&nbsp;</li>
 				<li class="phone"><a href="tel:7738859871">773.885.9871</a></li>
 				<li class="mail"><a href="mailto:administrator@ontheblock.org">administrator@ontheblock.org</a></li>
 			</ul>

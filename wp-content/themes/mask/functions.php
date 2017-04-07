@@ -33,7 +33,7 @@ function boilerplate_nav(){
 	if(($locations = get_nav_menu_locations()) && isset($locations[$menuName])){
 		$menu = wp_get_nav_menu_object($locations[$menuName]);
 		$menuItems = wp_get_nav_menu_items($menu->term_id);
-		
+
 		$menuList .= "\t\t\t\t". '<ul class="menu-items">' ."\n";
 		foreach ((array) $menuItems as $key => $menuItem) {
 			$title = $menuItem->title;
@@ -44,7 +44,7 @@ function boilerplate_nav(){
 	} else {
 		// $menu_list = '<!-- no list defined -->';
 	}
-	echo $menuList;	
+	echo $menuList;
 }
 
 // Register HTML5 Blank Navigation
@@ -70,10 +70,10 @@ function boilerplate_header_scripts(){
 
         wp_register_script('scripts', get_template_directory_uri() . '/scripts.js', array('jquery'), '1.0.0', $in_footer = true); // Custom scripts
         wp_enqueue_script('scripts'); // Enqueue it!
-		
+
     }
 }
-add_action('init', 'boilerplate_header_scripts'); 
+add_action('init', 'boilerplate_header_scripts');
 
 // Load conditional scripts
 function boilerplate_conditional_scripts(){
@@ -82,7 +82,7 @@ function boilerplate_conditional_scripts(){
         wp_enqueue_script('scriptname'); // Enqueue it!
     }
 }
-add_action('wp_print_scripts', 'boilerplate_conditional_scripts'); 
+add_action('wp_print_scripts', 'boilerplate_conditional_scripts');
 
 //Move jQuery scripts to the bottom
 function jquery_mumbo_jumbo(){
@@ -100,7 +100,7 @@ function boilerplate_styles(){
     wp_register_style('boilerplate', get_template_directory_uri() . '/dist/css/main.css', array(), '1.0', 'all');
     wp_enqueue_style('boilerplate'); // Enqueue it!
 }
-add_action('wp_enqueue_scripts', 'boilerplate_styles'); 
+add_action('wp_enqueue_scripts', 'boilerplate_styles');
 
 
 // Remove the <div> surrounding the dynamic navigation to cleanup markup
@@ -108,7 +108,7 @@ function my_wp_nav_menu_args($args = ''){
     $args['container'] = false;
     return $args;
 }
-add_filter('wp_nav_menu_args', 'my_wp_nav_menu_args'); 
+add_filter('wp_nav_menu_args', 'my_wp_nav_menu_args');
 
 
 // Remove Injected classes, ID's and Page ID's from Navigation <li> items
@@ -124,18 +124,18 @@ function my_css_attributes_filter($var)
 function remove_category_rel_from_category_list($thelist){
     return str_replace('rel="category tag"', 'rel="tag"', $thelist);
 }
-add_filter('the_category', 'remove_category_rel_from_category_list'); 
+add_filter('the_category', 'remove_category_rel_from_category_list');
 
 //Social Sharing
 function opengraph() {
     global $post;
- 
+
         if(has_post_thumbnail($post->ID)) {
             $img_src = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'medium');
         } else {
             $img_src = get_stylesheet_directory_uri() . '/dist/img/share.jpg';
         }
-		
+
         if($excerpt = $post->post_excerpt) {
             $excerpt = strip_tags($post->post_excerpt);
             $excerpt = str_replace("", "'", $excerpt);
@@ -151,13 +151,13 @@ function opengraph() {
     <meta property="og:url" content="<?php echo the_permalink(); ?>"/>
     <meta property="og:site_name" content="<?php echo get_bloginfo(); ?>"/>
     <meta property="og:image" content="<?php echo $img_src; ?>"/>
-	<meta name="twitter:card" content="<?php echo $img_src; ?>">	
+	<meta name="twitter:card" content="<?php echo $img_src; ?>">
 	<meta name="twitter:site" content="@twitter">
 	<meta name="twitter:creator" content="@twitter">
 
- 
+
 <?php
- 
+
 }
 add_action('wp_head', 'opengraph', 5);
 
@@ -177,7 +177,7 @@ function add_slug_to_body_class($classes){
     }
     return $classes;
 }
-add_filter('body_class', 'add_slug_to_body_class'); 
+add_filter('body_class', 'add_slug_to_body_class');
 
 // If Dynamic Sidebar Exists
 if (function_exists('register_sidebar')){
@@ -249,7 +249,7 @@ function boilerplate_blank_view_article($more){
     global $post;
     return '... <a class="view-article" href="' . get_permalink($post->ID) . '">' . __('View Article', 'boilerplate') . '</a>';
 }
-add_filter('excerpt_more', 'boilerplate_blank_view_article'); 
+add_filter('excerpt_more', 'boilerplate_blank_view_article');
 
 // Remove Admin bar
 function remove_admin_bar(){
@@ -268,8 +268,8 @@ function remove_thumbnail_dimensions( $html ){
     $html = preg_replace('/(width|height)=\"\d*\"\s/', "", $html);
     return $html;
 }
-add_filter('post_thumbnail_html', 'remove_thumbnail_dimensions', 10); 
-add_filter('image_send_to_editor', 'remove_thumbnail_dimensions', 10); 
+add_filter('post_thumbnail_html', 'remove_thumbnail_dimensions', 10);
+add_filter('image_send_to_editor', 'remove_thumbnail_dimensions', 10);
 
 
 
@@ -279,35 +279,35 @@ add_filter('image_send_to_editor', 'remove_thumbnail_dimensions', 10);
 
 // Remove Actions
 // Display the links to the extra feeds such as category feeds
-remove_action('wp_head', 'feed_links_extra', 3); 
+remove_action('wp_head', 'feed_links_extra', 3);
 // Display the links to the general feeds: Post and Comment Feed
-remove_action('wp_head', 'feed_links', 2); 
+remove_action('wp_head', 'feed_links', 2);
 // Display the link to the Really Simple Discovery service endpoint, EditURI link
-remove_action('wp_head', 'rsd_link'); 
+remove_action('wp_head', 'rsd_link');
 // Display the link to the Windows Live Writer manifest file.
-remove_action('wp_head', 'wlwmanifest_link'); 
+remove_action('wp_head', 'wlwmanifest_link');
 // Index link
-remove_action('wp_head', 'index_rel_link'); 
+remove_action('wp_head', 'index_rel_link');
  // Prev link
 remove_action('wp_head', 'parent_post_rel_link', 10, 0);
 // Start link
-remove_action('wp_head', 'start_post_rel_link', 10, 0); 
+remove_action('wp_head', 'start_post_rel_link', 10, 0);
 // Display relational links for the posts adjacent to the current post.
-remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0); 
+remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0);
 // Display the XHTML generator that is generated on the wp_head hook, WP version
-remove_action('wp_head', 'wp_generator'); 
+remove_action('wp_head', 'wp_generator');
 remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
 remove_action('wp_head', 'rel_canonical');
 remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0);
 
 // Add Filters
 // Remove <p> tags in Dynamic Sidebars (better!)
-add_filter('widget_text', 'shortcode_unautop'); 
+add_filter('widget_text', 'shortcode_unautop');
 // Remove auto <p> tags in Excerpt (Manual Excerpts only)
-add_filter('the_excerpt', 'shortcode_unautop'); 
+add_filter('the_excerpt', 'shortcode_unautop');
 // Remove Filters
 // Remove <p> tags from Excerpt altogether
-remove_filter('the_excerpt', 'wpautop'); 
+remove_filter('the_excerpt', 'wpautop');
 
 /*------------------------------------*\
 	Custom Post Types
@@ -318,7 +318,7 @@ function create_post_type(){
 	// Register Taxonomies for Category
     register_taxonomy_for_object_type('post_tag', 'event');
 	// Register Custom Post Type
-    register_post_type('event', 
+    register_post_type('event',
         array(
         'labels' => array(
             'name' => __('Events', 'event'),
@@ -336,7 +336,7 @@ function create_post_type(){
         ),
         'public' => true,
 		// Allows your posts to behave like Hierarchy Pages
-        'hierarchical' => true, 
+        'hierarchical' => true,
         'has_archive' => true,
 		// Go to Dashboard for supports - add custom-fields for ACF support
         'supports' => array(
@@ -344,14 +344,14 @@ function create_post_type(){
             'editor',
             'excerpt',
             'thumbnail'
-        ), 
+        ),
 		// Allows export in Tools > Export
-        'can_export' => true, 
+        'can_export' => true,
 		// Add Category and Post Tags support
         'taxonomies' => array(
             'post_tag',
             'category'
-        ) 
+        )
     ));
 }
 add_action('init', 'create_post_type');
