@@ -11,7 +11,8 @@ var gulp = require('gulp'),
     plumber = require('gulp-plumber'),
     notify = require('gulp-notify'),
     util = require('gulp-util'),
-    postcss = require('gulp-postcss');
+    postcss = require('gulp-postcss'),
+    browsersync = require('browser-sync').create();
 
 // PATHS
 var root = '';
@@ -36,6 +37,13 @@ var errorHandler = {
   })
 };
 
+// BROWSERSYNC
+gulp.task( 'browsersync', function() {
+  browsersync.init({
+    proxy: 'localhost/mask'
+  });
+});
+
 // SASS
 gulp.task('sass', function(){
   gulp
@@ -46,6 +54,7 @@ gulp.task('sass', function(){
       autoprefixer({ browsers: ['last 2 versions'] })
     ], { syntax: require('postcss-scss') }))
     .pipe(gulp.dest(paths.css))
+    .pipe(browsersync.stream());
 });
 
 // JAVASCRIPT
@@ -54,7 +63,8 @@ gulp.task('javascript', function(){
       .pipe(uglify())
       .on('error', function (err) { util.log(util.colors.red('[Error]'), err.toString()); })
       // .pipe(concat('main.js'))
-      .pipe(gulp.dest(paths.js));
+      .pipe(gulp.dest(paths.js))
+      .pipe(browsersync.stream());
 });
 
 // IMAGES TASK
@@ -67,13 +77,15 @@ gulp.task('images', function(){
     .pipe(gulp.dest(paths.img));
   gulp.src(paths.imgsrc + '/**/*.svg')
     .pipe(svgmin())
-    .pipe(gulp.dest(paths.img));
+    .pipe(gulp.dest(paths.img))
+    .pipe(browsersync.stream());
 });
 
 // FONTS TASK
 gulp.task('fonts', function(){
   gulp.src(paths.fontssrc + '/**/*')
-      .pipe(gulp.dest(paths.fonts));
+      .pipe(gulp.dest(paths.fonts))
+      .pipe(browsersync.stream());
 });
 
 // CLEAN TASK
@@ -109,6 +121,7 @@ gulp.task('default', function(defaultDone){
   runSequence(
     'build',
     'watch',
+    'browsersync',
     defaultDone
   );
 });
