@@ -4,7 +4,7 @@ $mission = the_field('mission');
 $who = the_field('who_we_are');
 $quote = the_field('quote');
 $attribution = the_field('attribution');
-$featured = the_field('featured');
+$featuredImage = the_field('featured_image');
 ?>
 
 	<main role="main">
@@ -102,7 +102,11 @@ $featured = the_field('featured');
 				?>
 					
 					<div class="col span-6">
-												
+						<?php
+						if($featuredImage): ?>
+							<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>	
+						
+						<?php endif; ?>
 						<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
 					</div>
 					<div class="col span-6">
@@ -119,14 +123,23 @@ $featured = the_field('featured');
 					<?php endwhile; ?>
 				</div>
 				</div>
+				
 						
-				<?php $my_query = new WP_Query( 'posts_per_page=12' );
+					<div class="content">
+						
+				<?php $my_query = new WP_Query( 'posts_per_page=9' );
 						while ( $my_query->have_posts() ) : $my_query->the_post(); 
-					if ( in_array( $post->ID, $do_not_duplicate ) ) continue; ?>
-				<div class="content">
-						<h3><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h3>
-				</div>
+					if ( in_array( $post->ID, $do_not_duplicate ) ) continue; 
+					$count++;
+					?>
+					<?php
+					if ($count > 3):
+						
+						?>
+						<div class="col latest-boxes box-<?php echo $count; ?>"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></div>
+<?php endif; ?>
 		<?php endwhile;  ?>
+</div>
 			</section>
 			<section class="events">
 				<div class="content">
