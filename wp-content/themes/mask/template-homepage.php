@@ -1,4 +1,4 @@
-<?php /* Template Name: Homepage Template */ get_header(); 
+<?php /* Template Name: Homepage Template */ get_header();
 $tagline = the_field('tagline');
 $mission = the_field('mission');
 $who = the_field('who_we_are');
@@ -11,7 +11,7 @@ $featuredImage = the_field('featured_image');
 		<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 			<section class="hero parrallax">
 				<div class="content">
-					<h1 class="marker"><?php 
+					<h1 class="marker"><?php
 						if($tagline){
 							echo $tagline;
 						}else{
@@ -33,7 +33,7 @@ $featuredImage = the_field('featured_image');
 							echo $mission;
 						}else{
 							echo 'MASK is starting on a grass roots level to come together and organize parents with emphasis on the power of mothers, to become a force in the fight against the violence. ';
-						}					
+						}
 					?></p>
 					<a class="button secondary-dark-bg" href="">Learn More</a>
 				</div>
@@ -55,16 +55,16 @@ $featuredImage = the_field('featured_image');
 					</div>
 					<div class="col span-6 where">
 						<h2 class="marker">Where We're Posted</h2>
-						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/map.svg" onerror="this.src='<?php echo get_template_directory_uri(); ?>/assets/img/map.png'" class="map">
+						<img src="<?php echo get_template_directory_uri(); ?>/dist/img/map.svg" onerror="this.src='<?php echo get_template_directory_uri(); ?>/dist/img/map.png'" class="map">
 						<a class="button primary-light-bg" href="">See Details</a>
-						
+
 					</div>
 				</div>
 				<div class="bottom"></div>
 			</section>
 			<section class="quote">
 				<div class="content">
-					<img src="<?php echo get_template_directory_uri(); ?>/assets/img/quote-icon.svg" onerror="this.src='<?php echo get_template_directory_uri(); ?>/assets/img/quote-icon.png'" class="quote-icon">
+					<img src="<?php echo get_template_directory_uri(); ?>/dist/img/quote-icon.svg" onerror="this.src='<?php echo get_template_directory_uri(); ?>/dist/img/quote-icon.png'" class="quote-icon">
 				</div>
 				<div class="content">
 				<div class="blockquote">
@@ -90,9 +90,9 @@ $featuredImage = the_field('featured_image');
 				<div class="content">
 					<h2 class="marker">The Latest</h2>
 						<a class="button secondary-light-bg" href="">See All Posts</a>
-				</div>				
+				</div>
 				<div class="content">
-				<?php 
+				<?php
 						$my_query = new WP_Query( 'posts_per_page=3' );
 						$count = 0;
 						while ( $my_query->have_posts() ) : $my_query->the_post();
@@ -100,47 +100,47 @@ $featuredImage = the_field('featured_image');
 						$count++;
 						if ($count == 1):
 				?>
-					
+
 					<div class="col span-6">
 						<?php
 						if($featuredImage): ?>
-							<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>	
-						
+							<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
+
 						<?php endif; ?>
 						<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
 					</div>
 					<div class="col span-6">
 						<?php elseif ($count == 2): ?>
 						<div class="top">
-							<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>	
+							<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
 						</div>
 						<?php elseif ($count == 3): ?>
 						<div class="bottom">
-							<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>	
+							<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
 						</div>
-					
+
 					<?php endif; ?>
 					<?php endwhile; ?>
 				</div>
 				</div>
-				
-						
+
+
 					<div class="content">
-						
+
 				<?php $my_query = new WP_Query( 'posts_per_page=9' );
-						while ( $my_query->have_posts() ) : $my_query->the_post(); 
-					if ( in_array( $post->ID, $do_not_duplicate ) ) continue; 
+						while ( $my_query->have_posts() ) : $my_query->the_post();
+					if ( in_array( $post->ID, $do_not_duplicate ) ) continue;
 					$count++;
 					?>
 					<?php
 					if ($count > 3):
-						
+
 						?>
 						<div class="col latest-boxes box-<?php echo $count; ?>">
 							<?php the_post_thumbnail(array(250,250)); ?>
 							<h3><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h3>
 							<p class="excerpt"><?php boilerplate_excerpt('boilerplate_index'); ?></p>
-							
+
 							<div class="meta-group">
 							<p class="author"><?php echo get_the_author(); ?> - <?php the_time('F j, Y'); ?></p>
 							<p class="category"><?php  the_category(', '); // Separated by commas ?></p>

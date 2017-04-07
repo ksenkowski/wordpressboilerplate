@@ -16,7 +16,7 @@
 		<link rel='stylesheet' id='permanentMarkerFont-css'  href='http://fonts.googleapis.com/css?family=Permanent+Marker&#038;ver=4.7.3' type='text/css' media='all' />
 		<script src="https://use.fontawesome.com/70889c11f6.js"></script>
 		<?php wp_head(); ?>
-		
+
 		<script>
         conditionizr.config({
             assets: '<?php echo get_template_directory_uri(); ?>',
@@ -33,7 +33,7 @@
 				<nav class="menu slide-left" role="navigation">
 					<button class="close-menu">X</button>
 					<?php if (function_exists(boilerplate_nav())) boilerplate_nav(); ?>
-					
+
 					<div class="button-group">
 						<div class="social-buttons"></div>
 						<a class="button secondary-dark-bg" href="donate.com">Contact Us</a>
@@ -46,9 +46,9 @@
 					<div class="span-12 col">
 						<button class="open-menu">&#9776;</button>
 						<!-- <a href="<?php echo home_url(); ?>">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo.svg" onerror="<?php echo get_template_directory_uri(); ?>/assets/img/logo.png'" class="logo">
+							<img src="<?php echo get_template_directory_uri(); ?>/dist/img/logo.svg" onerror="<?php echo get_template_directory_uri(); ?>/dist/img/logo.png'" class="logo">
 						</a> -->
-					<img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo.svg" onerror="this.src='<?php echo get_template_directory_uri(); ?>/assets/img/logo-header.png'" class="logo">
+					<img src="<?php echo get_template_directory_uri(); ?>/dist/img/logo.svg" onerror="this.src='<?php echo get_template_directory_uri(); ?>/dist/img/logo-header.png'" class="logo">
 					<div class="button-group sticky">
 						<ul class="unstyled">
 							<li><a class="button secondary-dark-bg">Contact Us</a></li>
