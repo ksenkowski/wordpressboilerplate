@@ -7,7 +7,7 @@
 			<ul class="unstyled">
 				<li>M.A.S.K., P.O. BOX 368755,</li>
 				<li>Chicago, Illinois 60636</li>
-				<li></li>
+				<li>&nbsp;</li>
 				<li class="phone"><a href="tel:7738859871">773.885.9871</a></li>
 				<li class="mail"><a href="mailto:administrator@ontheblock.org">administrator@ontheblock.org</a></li>
 			</ul>

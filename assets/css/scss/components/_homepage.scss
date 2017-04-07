@@ -13,9 +13,7 @@
 		width:270px;
 		.button{
 			max-width:120px;
-			font-size:rem(12px);
 			display:inline-block;
-			padding:10px 0px 8px 0px;
 			&.secondary-dark-bg{
 				max-width:120px;
 				margin-right:20px;
@@ -168,6 +166,9 @@
 		width:120px;
 		padding:10px 0px 8px 0px;
 		font-size:rem(12px);
+	}
+	.large{
+		
 	}
 }
 .events{

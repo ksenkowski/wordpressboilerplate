@@ -3,10 +3,13 @@
 	background-color:$color-primary-6;
 	padding:30px 2%;
 	.logo{
-		width:100px;
+		width:75px;
 	}
 	ul{
-		
+		font-size:rem(12px);
+		a{
+			color:$color-primary-3;
+		}
 		.phone{
 			
 		}
@@ -16,5 +19,9 @@
 	}
 	.social-group{
 		
+	}
+	.button{
+		width:166px;
+		float:right;
 	}
 }

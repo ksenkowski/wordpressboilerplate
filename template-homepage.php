@@ -4,6 +4,7 @@ $mission = the_field('mission');
 $who = the_field('who_we_are');
 $quote = the_field('quote');
 $attribution = the_field('attribution');
+$featured = the_field('featured');
 ?>
 
 	<main role="main">
@@ -84,54 +85,54 @@ $attribution = the_field('attribution');
 				</div>
 			</div>
 			</section>
+			<?php endwhile; ?>
 			<section class="latest">
 				<div class="content">
 					<h2 class="marker">The Latest</h2>
 						<a class="button secondary-light-bg" href="">See All Posts</a>
-				</div>
+				</div>				
 				<div class="content">
-					<div class="span-6 col">
-						<?php $my_query = new WP_Query( 'category_name=featured&posts_per_page=3' );
+				<?php 
+						$my_query = new WP_Query( 'posts_per_page=3' );
+						$count = 0;
 						while ( $my_query->have_posts() ) : $my_query->the_post();
-						$do_not_duplicate = $post->ID; ?>
-						<div class="featured-primary">
-						<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
-					</div>
-							<!-- Do stuff... -->
-						<?php endwhile; ?>
-						<?php rewind_posts(); ?>
-						
-					</div>
-					<div class="span-6 col">
-							<?php $my_query = new WP_Query( 'category_name=featured&posts_per_page=3' );
-							while ( $my_query->have_posts() ) : $my_query->the_post();
-							$do_not_duplicate = $post->ID; ?>
-						<div class="featured-secondary"></div>
-							<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
-						</div>
-								<!-- Do stuff... -->
-							<?php endwhile; ?>
-						
-					</div>
-				</div>
-				<div class="content">
-						<?php $my_query = new WP_Query( 'cat=-featured&posts_per_page=9' );
-						while ( $my_query->have_posts() ) : $my_query->the_post();
-						$do_not_duplicate = $post->ID; ?>
-						<div class="featured-primary">
-						<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
-					</div>
-							<!-- Do stuff... -->
-						<?php endwhile; ?>
+						$do_not_duplicate[] = $post->ID;
+						$count++;
+						if ($count == 1):
+				?>
 					
+					<div class="col span-6">
+												
+						<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
+					</div>
+					<div class="col span-6">
+						<?php elseif ($count == 2): ?>
+						<div class="top">
+							<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>	
+						</div>
+						<?php elseif ($count == 3): ?>
+						<div class="bottom">
+							<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>	
+						</div>
+					
+					<?php endif; ?>
+					<?php endwhile; ?>
 				</div>
+				</div>
+						
+				<?php $my_query = new WP_Query( 'posts_per_page=12' );
+						while ( $my_query->have_posts() ) : $my_query->the_post(); 
+					if ( in_array( $post->ID, $do_not_duplicate ) ) continue; ?>
+				<div class="content">
+						<h3><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h3>
+				</div>
+		<?php endwhile;  ?>
 			</section>
 			<section class="events">
 				<div class="content">
 					<h2 class="marker">Events</h2>
 				</div>
 			</section>
-		<?php endwhile; ?>
 
 		<?php else: ?>
 
