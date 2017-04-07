@@ -32,9 +32,6 @@ wp-content/uploads/
 wp-content/upgrade/
 wp-content/wp-cache-config.php
 
-# Ignore wordpress submodule dir
-wordpress
-
 # Theme-specific files
 wp-content/themes/mask/dist
 
