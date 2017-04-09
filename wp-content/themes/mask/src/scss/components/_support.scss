@@ -1,33 +1,33 @@
 .support-header{
-	padding:80px 0 20px;
+	padding:80px 0 30px;
 	
 	h1{
 		font-size:rem(40px);
-		margin:50px 0 30px;
+		margin:50px 0 0px;
 	}
 }
 .details{
-	height:80vh;
+	padding: 0 0 60px;
 	.left{
 		p{
-			font-size:rem(30px);
+			font-size:rem(16px);
 			font-weight:200;
 			max-width:300px;
 		}
 		.button{
 			float:left;
 			max-width:80px;
-			margin-top:30px;
+			margin:30px 0;
 		}
 	}
 	.right{
 		p{
-			font-size:rem(18px);
+			font-size:rem(16px);
 			line-height:133.33%;
 		}
 		ul{
 			margin:30px 0px;
-			font-size:rem(18px);
+			font-size:rem(16px);
 		}
 	}
 }

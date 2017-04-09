@@ -16,7 +16,7 @@ $rightContent = get_field('support_right_hand_copy');
 							<?php if($leftContent){
 								echo $leftContent;
 							}else{
-								echo 'The Impactful Provocative Tagline Goes Here';
+								echo '<p>MASK is a volunteer-based organization, driven by donations from the generosity of people like you.</p>';
 							}
 							
 							 ?>
@@ -31,7 +31,14 @@ $rightContent = get_field('support_right_hand_copy');
 							<?php if($rightContent){
 								echo $rightContent;
 							}else{
-								echo 'The Impactful Provocative Tagline Goes Here';
+								echo '<p>Your gift will be used directly in support of:</p>
+<ul>
+ 	<li>Feeding our communities</li>
+ 	<li>Summer programming</li>
+ 	<li>The Lot - Englewood, Chicago</li>
+ 	<li>Back to school drives</li>
+</ul>
+<p>Through donations, we will be able to continue supporting and improving our communities for future generations.</p>';
 							}
 							
 							 ?></div>

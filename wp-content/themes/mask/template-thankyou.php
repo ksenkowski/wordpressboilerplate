@@ -16,7 +16,7 @@ $rightContent = get_field('thank_you_right_hand_copy');
 							<?php if($leftContent){
 								echo $leftContent;
 							}else{
-								echo 'The Impactful Provocative Tagline Goes Here';
+								echo '<p><strong>You rock!</strong> <br>We really appreciate your support.</p>';
 							}
 							
 							 ?>
@@ -25,7 +25,14 @@ $rightContent = get_field('thank_you_right_hand_copy');
 							<?php if($rightContent){
 								echo $rightContent;
 							}else{
-								echo 'The Impactful Provocative Tagline Goes Here';
+								echo '<p>Your gift will be used directly in support of:</p>
+<ul>
+ 	<li>Feeding our communities</li>
+ 	<li>Summer programming</li>
+ 	<li>The Lot - Englewood, Chicago</li>
+ 	<li>Back to school drives</li>
+</ul>
+<p>Thanks to generous people like you, we can continue our work in our current communities, and ensure that MASK is around to reach even more communities in the future.</p>';
 							}
 							
 							 ?></div>

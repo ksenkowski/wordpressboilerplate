@@ -1,7 +1,7 @@
 <footer class="footer" role="contentinfo">
 	<div class="content gutters">
 		<div class="col span-2">
-			<img src="<?php echo get_template_directory_uri(); ?>/dist/img/logo.png" class="logo">
+			<a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/dist/img/logo.png" class="logo"></a>
 		</div>
 		<div class="col span-7">
 			<ul class="unstyled">
