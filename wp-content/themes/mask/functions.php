@@ -30,6 +30,7 @@ if (function_exists('add_theme_support')){
 function boilerplate_nav(){
 	//Menu Slug
 	$menuName = 'main-menu';
+	$menuList = '';
 	if(($locations = get_nav_menu_locations()) && isset($locations[$menuName])){
 		$menu = wp_get_nav_menu_object($locations[$menuName]);
 		$menuItems = wp_get_nav_menu_items($menu->term_id);
@@ -42,7 +43,7 @@ function boilerplate_nav(){
 		}
 		$menuList .= "\t\t\t\t". '</ul>' ."\n";
 	} else {
-		// $menu_list = '<!-- no list defined -->';
+		 $menuList = '<!-- no list defined -->';
 	}
 	echo $menuList;
 }

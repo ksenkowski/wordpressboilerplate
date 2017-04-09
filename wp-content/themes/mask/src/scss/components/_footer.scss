@@ -19,10 +19,13 @@
 	}
 	.social-group{
 		width:75px;
-    float:right;
+    float:left;
     @include clearfix;
     margin-bottom:em(20px);
     padding-right:em(10px);
+	@include breakpoint(portrait){
+		float:right;
+	}
 
     i{
       float:right;
@@ -36,6 +39,7 @@
 	.button{
 		width:166px;
 		float:left;
+		display:none;
 		@include breakpoint(portrait){
 			float:right;
 		}

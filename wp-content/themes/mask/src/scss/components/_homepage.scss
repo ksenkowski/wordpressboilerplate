@@ -2,15 +2,37 @@
 	padding-top:80px;
 	background-color:$color-primary-0;
 	h1{
-		margin:208px auto 51px;
+		margin:208px auto 20px;
 		color:$color-primary-5;
 		text-align:center;
 		display:block;
-		width:320px;
+		width:300px;
+		font-weight:800;
+		@include breakpoint(portrait){
+			width:550px;
+			font-size:rem(60px);
+			line-height:136.66%;
+		}
+
+	}
+	p{
+		width:270px;
+		margin:0 auto;
+		color:$color-primary-5;
+		text-align:center;
+		font-size:rem(16px);
+		margin-bottom:15px;
+		@include breakpoint(portrait){
+			width:350px;
+		}
+	}
+	p + p{
+		margin-bottom:35px;
+		
 	}
 	.button-group{
-		margin:0 auto;
-		width:270px;
+		margin:0 auto 80px;
+		width:120px;
 		.button{
 			max-width:120px;
 			display:inline-block;
@@ -22,7 +44,7 @@
 
 	}
 }
-.hero, .mission{
+.hero, .mission, .cta{
 	@include breakpoint(portrait){
 		min-height:600px;
 	}
@@ -30,21 +52,37 @@
 }
 .mission{
 	padding-bottom:30px;
-	background:$color-primary-0;
+	background:$color-primary-5;
 	background-size:contain;
+	position:relative;
+	.top{
+		background: url('../img/border/stripe-white-bottom.png') top center no-repeat;
+		background-size:cover;
+		width:100%;
+		height:33px;
+		position:absolute;
+		top:-33px;
+		left:0;
+		z-index:3;
+	}
 	.content-group{
 		width:320px;
 		margin:0 auto;
 	}
 	h2{
-		color:$color-primary-5;
 		text-align:left;
-		margin:160px 0px 70px;
+		margin:160px 0px 30px -30px;
+		padding-left:30px;
+		background: url('../img/mission.png') bottom left no-repeat;
+		background-size:contain;
+		display:block;
+		width:115px;
+		min-height:110px;
 	}
 	p{
-		color:$color-primary-5;
 		font-size:rem(12px);
 		margin:0 0 50px;
+		font-weight:700;
 	}
 	.button{
 		max-width:114px;
@@ -56,8 +94,10 @@
 
 .who-what{
 	position:relative;
+	background:$color-primary-0;
+	color:$color-primary-5;
 	.top{
-		background: url('/mask/wp-content/themes/mask/dist/img/border/dark-bottom-swipe.png') top center no-repeat;
+		background: url('../img/border/stripe-white-top.png') top center no-repeat;
 		background-size:cover;
 		width:100%;
 		height:33px;
@@ -68,7 +108,6 @@
 	}
 	.who{
 		padding:0px 50px 100px;
-		background:$color-primary-2;
 		position:relative;
 		@include breakpoint(portrait){
 			padding:100px 50px;
@@ -77,11 +116,15 @@
 	}
 	.where{
 		padding:0px 50px 100px;
-		background:$color-primary-7;
 		position:relative;
 		@include breakpoint(portrait){
 			padding:100px 50px;
 
+		}
+		.map{
+			@include breakpoint(portrait){
+				margin-top:80px;
+			}
 		}
 	}
 	h2{
@@ -91,28 +134,22 @@
 	}
 	p{
 		font-size:rem(12px);
+		font-weight:700;
 		margin:0 0 20px;
 	}
-	.button{
-		position:absolute;
-		left:50px;
-		bottom:30px;
-
-		width:100px;
-		padding:10px 0px 8px 0px;
+	ul{
 		font-size:rem(12px);
-		@include breakpoint(portrait){
-			bottom:70px;
-
+		.location{
+			text-transform:uppercase;
 		}
 	}
 	.bottom{
-		background: url('/mask/wp-content/themes/mask/dist/img/border/tan-top-swipe.png') top center no-repeat;
+		background: url('../img/border/tan-top-swipe.png') top center no-repeat;
 		background-size:cover;
 		width:100%;
 		height:33px;
 		position:absolute;
-		bottom:0;
+		bottom:-23px;
 		left:0;
 		z-index:3;
 	}
@@ -122,33 +159,107 @@
 .quote{
 	background:$color-secondary-3;
 	.quote-icon{
-		width:92px;
-		margin:55px auto;
+		width:33px;
+		float:left;
 		display:block;
+		margin:-33px 0 0 0;
+		@include breakpoint(portrait){
+			width:92px;
+			margin:-33px 0 0 -53px;
+		}
 	}
 	.blockquote{
-		max-width:600px;
-		margin:0 auto;
+		max-width:650px;
+		margin:56px auto 0px;
 		display:block;
 		p{
 			font-weight:normal;
-			font-size:rem(33px);
+			font-size:rem(20px);
 			text-align:center;
+			@include breakpoint(portrait){
+				font-size:rem(33px);
+			}
 			&.attribution{
-				font-size:rem(20px);
+				font-size:rem(16px);
 				margin:30px 0px 50px;
+				@include breakpoint(portrait){
+					font-size:rem(20px);
+				}
 			}
 		}
 	}
 }
 
+.cta{
+	background:$color-primary-5;
+	position:relative;
+	.top{
+		background: url('../img/border/stripe-white-top.png') top center no-repeat;
+		background-size:cover;
+		width:100%;
+		height:33px;
+		position:absolute;
+		top:-13px;
+		left:0;
+		z-index:3;
+	}
+	h2{
+		margin:32px 0px 26px;
+		font-size:rem(25px);
+		font-weight:400;
+	}
+	p, ul{
+		font-size:rem(12px);
+		line-height:141.67%;
+		margin-bottom:15px;
+	}
+	a{
+		text-transform:uppercase;
+		font-size:rem(12px);
+		line-height:141.67%;
+		font-style:italic;
+		font-weight:600;
+	}
+	div.wpforms-container-full .wpforms-form button[type=submit]{
+		background:$color-primary-1;
+		color:$color-primary-2;	
+		border:1px solid $color-primary-1;
+		border-radius:5px;
+		display:block;
+		font-size:rem(12px) !important;
+		padding:10px 0px 8px 0px !important;
+		font-weight:800;
+		text-transform:uppercase;
+		text-align:center;
+		width:100px;
+		height:42px;
+		float:right;
+		&:hover{
+			background:$color-primary-2;
+			color:$color-primary-1;	
+			
+		}
+		
+	}
+	div.wpforms-container-full .wpforms-form .wpforms-field-label{
+		font-weight:800;
+		font-size:rem(12px);
+		text-transform:uppercase;
+	}
+	div.wpforms-container-full .wpforms-form .wpforms-required-label{
+		color:$color-primary-4;
+	}
+	
+}
+
 .latest, .events{
+	display:none;
 	h2{
 		display:block;
 		min-height:36;
 		max-width:175px;
 		padding:0 0 10px;
-		background:url('/mask/wp-content/themes/mask/dist/img/section-header-swipe.png') bottom center no-repeat;
+		background:url('../img/section-header-swipe.png') bottom center no-repeat;
 		background-size:contain;
 		font-size:rem(25px);
 		text-transform:uppercase;
@@ -157,7 +268,7 @@
 }
 
 .latest{
-	background: url('/mask/wp-content/themes/mask/dist/img/border/tan-bottom-swipe.png') top center no-repeat;
+	background: url('../img/border/tan-bottom-swipe.png') top center no-repeat;
 	background-size:contain;
 	.button{
 		position:absolute;

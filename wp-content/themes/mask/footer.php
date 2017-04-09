@@ -8,13 +8,13 @@
 				<li>M.A.S.K., P.O. BOX 368755,</li>
 				<li>Chicago, Illinois 60636</li>
 				<li>&nbsp;</li>
-				<li class="phone"><a href="tel:7738859871">773.885.9871</a></li>
-				<li class="mail"><a href="mailto:administrator@ontheblock.org">administrator@ontheblock.org</a></li>
+				<li class="phone"><i class="fa fa-phone" aria-hidden="true"></i> <a href="tel:7738859871">773.885.9871</a></li>
+				<li class="mail"><i class="fa fa-envelope" aria-hidden="true"></i> <a href="mailto:administrator@ontheblock.org">administrator@ontheblock.org</a></li>
 			</ul>
 		</div>
 		<div class="col span-2">
 			<div class="social-group">
-				<a href="https://twitter.com/TamarManasseh" target="_new">
+				<a href="https://twitter.com/MASKchicago" target="_new">
 					<i class="fa fa-twitter" aria-hidden="true"></i>
 				</a>
 				<a href="https://www.facebook.com/Mothers-Against-Senseless-Killings-541764962534514/" target="_new">

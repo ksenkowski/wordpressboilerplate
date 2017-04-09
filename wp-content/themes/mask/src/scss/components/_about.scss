@@ -1,0 +1,117 @@
+.about-hero{
+	padding-top:80px;
+	background-color:$color-primary-0;
+	h1{
+		margin:56px auto 50px;
+		text-transform:uppercase;
+		color:$color-primary-5;
+		text-align:center;
+		display:block;
+		width:300px;
+		font-weight:800;
+		font-size:rem(26px);
+		@include breakpoint(portrait){
+			margin:156px auto 20px;
+			width:750px;
+			font-size:rem(46px);
+			line-height:136.66%;
+		}
+
+	}
+}
+
+.about-hero, .army-copy, .what-we-do{
+	@include breakpoint(portrait){
+		min-height:550px;
+	}
+
+}
+.what-we-do{
+	padding:70px 0 30px;
+	position:relative;
+	.top{
+		background: url('../img/border/stripe-white-bottom.png') top center no-repeat;
+		background-size:cover;
+		width:100%;
+		height:33px;
+		position:absolute;
+		top:-23px;
+		left:0;
+		z-index:3;
+	}
+	h2{
+		font-size:rem(25px);
+		line-height:136%;
+		font-weight:400;
+		margin:0 0px 15px;
+	}
+	p, ul{
+		font-size:rem(18px);
+		line-height:133.33%;
+	}
+	ul{
+		margin-left: 0;
+		list-style: none;
+	    -webkit-margin-before: 0;
+	    -webkit-margin-after: 0;
+	    -webkit-margin-start: 0px;
+	    -webkit-margin-end: 0px;
+	    -webkit-padding-start: 0px;
+		
+	}
+}
+.army-hero{
+	position:relative;
+	.top{
+		background: url('../img/border/stripe-white-bottom.png') top center no-repeat;
+		background-size:cover;
+		width:100%;
+		height:33px;
+		position:absolute;
+		top:-23px;
+		left:0;
+		z-index:3;
+	}
+	.bottom{
+		background: url('../img/border/stripe-white-top.png') top center no-repeat;
+		background-size:cover;
+		width:100%;
+		height:33px;
+		position:absolute;
+		bottom:-23px;
+		left:0;
+		z-index:3;
+	}
+}
+.army-copy{
+	position:relative;
+	.top{
+		background: url('../img/border/stripe-white-bottom.png') top center no-repeat;
+		background-size:cover;
+		width:100%;
+		height:33px;
+		position:absolute;
+		top:-23px;
+		left:0;
+		z-index:3;
+	}
+	h2{
+		font-size:rem(25px);
+		line-height:136%;
+		margin:91px 0 15px;
+	}
+	p{
+		font-size:rem(12px);
+	}
+	.copy-group{
+		margin:0 auto;
+		max-width:550px;
+	}
+	.signature{
+		float:right;
+		width:134px;
+		margin-top:20px;
+		@include clearfix;
+		
+	}
+}

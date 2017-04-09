@@ -1,30 +1,49 @@
 <?php /* Template Name: Homepage Template */ get_header();
-$tagline = the_field('tagline');
-$mission = the_field('mission');
-$who = the_field('who_we_are');
-$quote = the_field('quote');
-$attribution = the_field('attribution');
-$featuredImage = the_field('featured_image');
+$heroTitle = get_field('hero_title');
+$heroSubtitle = get_field('hero_subtitle');
+$heroUrl = get_field('hero_url');
+$mission = get_field('mission');
+$whereSubtitle = get_field('where_subtitle');
+$quote = get_field('quote');
+$attribution = get_field('attribution');
+$heroImage = get_field('hero_image');
+$ctaLeftTitle = get_field('cta_left_title');
+$ctaLeftCopy = get_field('cta_left_copy');
+$ctaRightTitle = get_field('cta_right_title');
+$ctaRightCopy = get_field('cta_right_copy');
+$heroBG = 'background:linear-gradient(rgba(69, 96, 85, 0.7),rgba(69, 96, 85, 0.7)),url('.$heroImage.') top center / cover no-repeat fixed;';
 ?>
 
 	<main role="main">
 		<?php if (have_posts()): while (have_posts()) : the_post(); ?>
-			<section class="hero parrallax">
+			<section class="hero parrallax" style="<?php echo $heroBG ?>">
 				<div class="content">
-					<h1 class="marker"><?php
-						if($tagline){
-							echo $tagline;
+					<h1><?php
+						if($heroTitle){
+							echo $heroTitle;
 						}else{
-							echo 'The Impactful Provocative Tagline Goes Here';
+							echo 'The Great Spring Break Sit-Out';
 						}
 						?></h1>
+						<?php
+						if($heroSubtitle){
+							echo $heroSubtitle;
+						}else{
+							echo '<p><strong>April 10 - April 14</strong></p><p>The time you give to building communit really matters. Come sit with us next week!</p>';
+						}
+						?>
 					<div class="button-group sticky">
-						<a class="button secondary-dark-bg" href="">Contact Us</a>
-						<a class="button primary-dark-bg" href="">Donate</a>
+						<?php
+						if($heroUrl):?>
+						<a class="button primary-dark-bg" href="<?php echo $heroUrl; ?>">View Event</a>
+						
+					<?php endif; ?>
+						
 					</div>
 				</div>
 			</section>
-			<section class="mission">
+			<section class="mission header-sync">
+				<div class="top"></div>
 				<div class="content">
 					<div class="content-group">
 					<h2 class="marker">Our<br/>Mission</h2>
@@ -32,10 +51,10 @@ $featuredImage = the_field('featured_image');
 						if($mission){
 							echo $mission;
 						}else{
-							echo 'MASK is starting on a grass roots level to come together and organize parents with emphasis on the power of mothers, to become a force in the fight against the violence. ';
+							echo 'MASK is a force that empowers us to be the voice of change, safety, and presence for our families and communities. As individuals joined together, our many voices are ampliied as one.';
 						}
 					?></p>
-					<a class="button secondary-dark-bg" href="">Learn More</a>
+					<a class="button secondary-dark-bg" href="/about">Learn More</a>
 				</div>
 				</div>
 			</section>
@@ -43,32 +62,40 @@ $featuredImage = the_field('featured_image');
 				<div class="top"></div>
 				<div class="content flex">
 					<div class="col span-6 who">
-						<h2 class="marker">Who We Are</h2>
+						<h2 class="marker">Where We're Posted</h2>
 						<?php
-							if($who){
-								echo $who;
+							if($whereSubtitle){
+								echo $whereSubtitle;
 							}else{
-								echo '<p>M.A.S.K. is putting an end to senseless gun violence and adolescent outrage on our neighborhood streets. By injecting a motherly presence, we establish love and peace on the block, giving the community and our children a future.</p><p>MASK is a force that empowers us to be the voice of change, safety, and presence for our families and communities. As individuals joined together, our many voices are ampliied as one.</p>';
+								echo '<p>You can find us represented in the following cities.</p>';
 							}
+							if(have_rows('posted_locations')):
 						?>
-						<a class="button primary-light-bg" href="">Read More</a>
+						<ul class="unstyled spaced-list">
+							<?php while(have_rows('posted_locations')): the_row();
+								$name = get_sub_field('location_name');
+								$url = get_sub_field('location_url');
+								?>
+								<li><span class="location"><?php echo $name ?></span>
+									<?php if($url): ?>
+									<br/><a href="<?php echo $url ?>">Visit Facebook ></a>
+								<?php endif; ?>
+								</li>
+								<?php endwhile; ?>
+						</ul>
+					<?php endif; ?>
 					</div>
 					<div class="col span-6 where">
-						<h2 class="marker">Where We're Posted</h2>
 						<img src="<?php echo get_template_directory_uri(); ?>/dist/img/map.svg" onerror="this.src='<?php echo get_template_directory_uri(); ?>/dist/img/map.png'" class="map">
-						<a class="button primary-light-bg" href="">See Details</a>
-
 					</div>
 				</div>
 				<div class="bottom"></div>
 			</section>
 			<section class="quote">
 				<div class="content">
-					<img src="<?php echo get_template_directory_uri(); ?>/dist/img/quote-icon.svg" onerror="this.src='<?php echo get_template_directory_uri(); ?>/dist/img/quote-icon.png'" class="quote-icon">
-				</div>
-				<div class="content">
 				<div class="blockquote">
-					<p><?php
+					<p>					<img src="<?php echo get_template_directory_uri(); ?>/dist/img/quote-icon.svg" onerror="this.src='<?php echo get_template_directory_uri(); ?>/dist/img/quote-icon.png'" class="quote-icon">
+<?php
 						if($quote){
 							echo $quote;
 						}else{
@@ -84,6 +111,42 @@ $featuredImage = the_field('featured_image');
 					?></p>
 				</div>
 			</div>
+			</section>
+			<section class="cta">
+				<div class="top"></div>
+				<div class="content gutters">
+					<div class="span-6 col">
+						<h2><?php
+						if($ctaLeftTitle){
+							echo $ctaLeftTitle;
+						}else{
+							echo '100% Fueled by Donations';
+						}
+						?></h2>
+						<?php
+						if($ctaLeftCopy){
+							echo $ctaLeftCopy;
+						}else{
+							echo 'Your gift will be used directly in support of:';
+						}
+						?>
+					</div>
+					<div class="span-6 col">
+						<h2><?php
+						if($ctaRightTitle){
+							echo $ctaRightTitle;
+						}else{
+							echo 'Reach Out!';
+						}
+						?></h2>
+						<?php
+						if($ctaRightCopy){
+							echo $ctaRightCopy;
+						}else{
+							echo 'The Great Spring Break Sit-Out';
+						}
+						?>
+					</div>
 			</section>
 			<?php endwhile; ?>
 			<section class="latest">
@@ -179,7 +242,12 @@ $featuredImage = the_field('featured_image');
           </ul>
 				</div>
 			</section>
-
+			<section class="donate-contact">
+				<div class="content">
+					<div class="span-6 col"></div>
+					<div class="span-6 col"></div>
+				</div>
+			</section>
 		<?php else: ?>
 
 			<article>

@@ -35,9 +35,21 @@
 					<?php if (function_exists(boilerplate_nav())) boilerplate_nav(); ?>
 
 					<div class="button-group">
-						<div class="social-buttons"></div>
-						<a class="button secondary-dark-bg" href="donate.com">Contact Us</a>
-						<a class="button primary-dark-bg" href="donate.com">Donate</a>
+						<div class="social-buttons">
+							<a href="https://twitter.com/MASKchicago" target="_new">
+								<i class="fa fa-twitter" aria-hidden="true"></i>
+							</a>
+							<a href="https://www.facebook.com/Mothers-Against-Senseless-Killings-541764962534514/" target="_new">
+								<i class="fa fa-facebook" aria-hidden="true"></i>
+							</a>
+							
+						</div>
+						<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+							<input type="hidden" name="cmd" value="_s-xclick">
+							<input type="hidden" name="hosted_button_id" value="MAATLYNZTRT5S">
+						<a class="button secondary-dark-bg" href="/contact">Contact Us</a>
+						<button class="button primary-dark-bg">Donate</button>
+						</form>
 					</div>
 				</nav>
 				<div class="mask"></div>
@@ -50,10 +62,15 @@
 						</a> -->
 					<img src="<?php echo get_template_directory_uri(); ?>/dist/img/logo.svg" onerror="this.src='<?php echo get_template_directory_uri(); ?>/dist/img/logo-header.png'" class="logo">
 					<div class="button-group sticky">
+						<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+						<input type="hidden" name="cmd" value="_s-xclick">
+						<input type="hidden" name="hosted_button_id" value="GR8X4RWSM4ET2">
+						
 						<ul class="unstyled">
-							<li><a class="button secondary-dark-bg">Contact Us</a></li>
-							<li><a class="button primary-dark-bg">Donate</a></li>
+							<li><a class="button secondary-dark-bg" href="contact">Contact Us</a></li>
+							<li><button class="button primary-dark-bg">Donate</button></li>							
 						</ul>
+					</form>
 					</div>
 				</div>
 				</div>

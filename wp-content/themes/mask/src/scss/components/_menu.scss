@@ -15,7 +15,17 @@
 		left:20px;
 		.social-buttons{
 			height:44px;
-			margin:15px 0px;
+			width:40px;
+			margin:5px auto 15px;
+			
+		    i{
+		      color:$color-secondary-2;
+
+		      &.fa-twitter{
+		        margin-right:em(10px);
+		      }
+		    }
+			
 		}
 		.button{
 			width:262px;

@@ -12,7 +12,7 @@
 			$('.slide-left, .mask').toggleClass('active');
 		});
 		
-		var theOffset = $('.mission').offset().top;
+		var theOffset = $('.header-sync').offset().top;
 		
 		$(window).scroll(function(){
 		  var sticky = $('.header .sticky'),

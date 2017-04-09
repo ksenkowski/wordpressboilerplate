@@ -9,7 +9,7 @@ body{
 	font-size: rem(16px);
     line-height: 1.25em;
     font-weight: 300;
-	color:$color-primary-3;
+	color:$color-primary-4;
 	position:relative;
 	background:$color-primary-5;
 }
@@ -35,7 +35,7 @@ img {
 	padding-top:30px;
 	height:0;
 	overflow:hidden;
-	margin:4% 0;
+	margin:0;
 	iframe, object, embed{
 		position:absolute;
 		top:0;
@@ -228,23 +228,23 @@ a {
 a:hover{
     color:$color-secondary-1;
 }
-p{
-	a{
-		background:linear-gradient($color-primary-5, $color-primary-5),linear-gradient($color-primary-5, $color-primary-5), linear-gradient($color-secondary-0, $color-secondary-0);
-		background-size:.05em 1px, .05em 1px, 1px, 1px;
-		background-repeat:no-repeat, no-repeat, repeat-x;
-		text-shadow: 0.03em 0 $color-primary-5, -0.03em 0 $color-primary-5, 0 0.03em $color-primary-5, 0 -0.03em $color-primary-5, 0.06em 0 $color-primary-5, -0.06em 0 $color-primary-5, 0.09em 0 $color-primary-5, -0.09em 0 $color-primary-5, 0.12em 0 $color-primary-5, -0.12em 0 $color-primary-5, 0.15em 0 $color-primary-5, -0.15em 0 $color-primary-5;
-		background-position: 0 87%,100% 87%,0 87%;
-	}
-	a:hover{
-		background:linear-gradient($color-primary-5, $color-primary-5),linear-gradient($color-primary-5, $color-primary-5), linear-gradient($color-secondary-1, $color-secondary-1);
-		background-size:.05em 1px, .05em 1px, 1px, 1px;
-		background-repeat:no-repeat, no-repeat, repeat-x;
-		text-shadow: 0.03em 0 $color-primary-5, -0.03em 0 $color-primary-5, 0 0.03em $color-primary-5, 0 -0.03em $color-primary-5, 0.06em 0 $color-primary-5, -0.06em 0 $color-primary-5, 0.09em 0 $color-primary-5, -0.09em 0 $color-primary-5, 0.12em 0 $color-primary-5, -0.12em 0 $color-primary-5, 0.15em 0 $color-primary-5, -0.15em 0 $color-primary-5;
-		background-position: 0 87%,100% 87%,0 87%;
-
-	}
-}
+//p{
+//	a{
+//		background:linear-gradient($color-primary-5, $color-primary-5),linear-gradient($color-primary-5, $color-primary-5), linear-gradient($color-secondary-0, $color-secondary-0);
+//		background-size:.05em 1px, .05em 1px, 1px, 1px;
+//		background-repeat:no-repeat, no-repeat, repeat-x;
+//		text-shadow: 0.03em 0 $color-primary-5, -0.03em 0 $color-primary-5, 0 0.03em $color-primary-5, 0 -0.03em $color-primary-5, 0.06em 0 $color-primary-5, -0.06em 0 $color-primary-5, 0.09em 0 $color-primary-5, -0.09em 0 $color-primary-5, 0.12em 0 $color-primary-5, -0.12em 0 $color-primary-5, 0.15em 0 $color-primary-5, -0.15em 0 $color-primary-5;
+//		background-position: 0 87%,100% 87%,0 87%;
+//	}
+//	a:hover{
+//		background:linear-gradient($color-primary-5, $color-primary-5),linear-gradient($color-primary-5, $color-primary-5), linear-gradient($color-secondary-1, $color-secondary-1);
+//		background-size:.05em 1px, .05em 1px, 1px, 1px;
+//		background-repeat:no-repeat, no-repeat, repeat-x;
+//		text-shadow: 0.03em 0 $color-primary-5, -0.03em 0 $color-primary-5, 0 0.03em $color-primary-5, 0 -0.03em $color-primary-5, 0.06em 0 $color-primary-5, -0.06em 0 $color-primary-5, 0.09em 0 $color-primary-5, -0.09em 0 $color-primary-5, 0.12em 0 $color-primary-5, -0.12em 0 $color-primary-5, 0.15em 0 $color-primary-5, -0.15em 0 $color-primary-5;
+//		background-position: 0 87%,100% 87%,0 87%;
+//
+//	}
+//}
 
 /* ==========================================================================
    FORMS -

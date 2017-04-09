@@ -21,13 +21,13 @@ if (file_exists(dirname(__FILE__) . '/local-config.php')) {
 
 // Global DB config
 if (!defined('DB_NAME')) {
-	define('DB_NAME', '[ your db name here ]');
+	define('DB_NAME', 'wordpress');
 }
 if (!defined('DB_USER')) {
-	define('DB_USER', '[ your db user here ]');
+	define('DB_USER', 'root');
 }
 if (!defined('DB_PASSWORD')) {
-	define('DB_PASSWORD', '[ your db password here ]');
+	define('DB_PASSWORD', 'root');
 }
 if (!defined('DB_HOST')) {
 	define('DB_HOST', 'localhost');
@@ -52,7 +52,14 @@ if (!defined('DB_COLLATE')) {
  *
  * @since 2.6.0
  */
-[ your salt creds here ]
+define('AUTH_KEY',         '/6T/t u1O .v+01cqFTw;#&!Ss`4^wlc;RI8FiVr(78l}NTv+ZH?{h)9enN|mWW@');
+define('SECURE_AUTH_KEY',  'UR).sXiCDX!;krD<RXGJ(~C,R.:!GE$c^${ [tO=RU~(@to/DG$aYJ3hd%hwM#C>');
+define('LOGGED_IN_KEY',    '!.}@jt. i#Qj=EsPYdl5p|et^zcaDd1[?3sUn(/tfYC10w?J`mKRQ+OY[M(X*mSc');
+define('NONCE_KEY',        'WDtQx^}[{EU4%vJC)m)`[Se4%iTxLVmXiz2,J>Lb:-SE5?xet@[.?iQzdQGfo`qS');
+define('AUTH_SALT',        '8p{K;pYnDB:I47T&cJ+[+NV6#r=.o4yFjEQj5fzQBl@OW >HbR`<(6-x!R_L`e/3');
+define('SECURE_AUTH_SALT', 'L`:)iuMEv9z#?Umx`mPd/idvAo#G^r8j8)d/*QxZMD|Zq?:hbf6+:%w);JBj+9C!');
+define('LOGGED_IN_SALT',   'qGl:v#=s:OF2qu^YL`@G#G?eP(XLQG2KS8AU{eN8WZcte(O(WxiadCPcFCRwLM3&');
+define('NONCE_SALT',       '?;Qn0/@Uc6p[4_xog8^ZNREy|~FpSP~WcG6hv4bGtM^.Pke=`A<_6MmwU1~ry`xU');
 
 /**#@-*/
 
@@ -81,16 +88,16 @@ define('WPLANG', '');
  * These are required because wordpress is installed in a subdirectory.
  */
 if (!defined('WP_SITEURL')) {
-	define('WP_SITEURL', '[ your wordpress directory here ]');
+	define('WP_SITEURL', 'http://localhost:8888/wordpress');
 }
 if (!defined('WP_HOME')) {
-	define('WP_HOME',    '[ your site url here ]');
+	define('WP_HOME',    'http://localhost:8888/');
 }
 if (!defined('WP_CONTENT_DIR')) {
 	define('WP_CONTENT_DIR', dirname(__FILE__) . '/wp-content');
 }
 if (!defined('WP_CONTENT_URL')) {
-	define('WP_CONTENT_URL', '[ your site url here ]/wp-content');
+	define('WP_CONTENT_URL', 'http://localhost:8888/wp-content');
 }
 
 
