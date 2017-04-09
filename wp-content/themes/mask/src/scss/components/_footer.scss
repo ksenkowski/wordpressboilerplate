@@ -4,9 +4,20 @@
 	padding:30px 2%;
 	.logo{
 		width:75px;
+		margin:0 auto 20px;
+		display:block;
+		@include breakpoint(portrait){
+			margin:0;
+		}
+		
 	}
 	ul{
-		font-size:rem(12px);
+		font-size:rem(16px);
+		text-align:center;
+		@include breakpoint(portrait){
+			text-align:left;
+		}
+		
 		a{
 			color:$color-primary-3;
 		}
@@ -18,20 +29,20 @@
 		}
 	}
 	.social-group{
-		width:75px;
-    float:left;
-    @include clearfix;
-    margin-bottom:em(20px);
-    padding-right:em(10px);
+		width:60px;
+   @include clearfix;
+    margin:20px auto 20px;
 	@include breakpoint(portrait){
 		float:right;
+	    padding-right:em(10px);
+		width:auto;
 	}
 
     i{
-      float:right;
       color:$color-primary-1;
-
-      &.fa-facebook{
+	  font-size:rem(25px);
+	  text-align:center;
+      &.fa-twitter{
         margin-right:em(10px);
       }
     }

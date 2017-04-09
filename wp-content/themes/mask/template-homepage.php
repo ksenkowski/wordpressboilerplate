@@ -3,7 +3,7 @@ $heroTitle = get_field('hero_title');
 $heroSubtitle = get_field('hero_subtitle');
 $heroUrl = get_field('hero_url');
 $mission = get_field('mission');
-$whereSubtitle = get_field('where_subtitle');
+$whereSubtitle = get_field('where__subtitle');
 $quote = get_field('quote');
 $attribution = get_field('attribution');
 $heroImage = get_field('hero_image');
@@ -91,6 +91,7 @@ $heroBG = 'background:linear-gradient(rgba(69, 96, 85, 0.7),rgba(69, 96, 85, 0.7
 				</div>
 				<div class="bottom"></div>
 			</section>
+<!-- QUOTE STARTS HERE -->
 			<section class="quote">
 				<div class="content">
 				<div class="blockquote">
@@ -112,10 +113,13 @@ $heroBG = 'background:linear-gradient(rgba(69, 96, 85, 0.7),rgba(69, 96, 85, 0.7
 				</div>
 			</div>
 			</section>
+<!-- QUOTE ENDS HERE -->
+
+<!-- CTA STARTS HERE -->
 			<section class="cta">
 				<div class="top"></div>
 				<div class="content gutters">
-					<div class="span-6 col">
+					<div class="span-6 col donate">
 						<h2><?php
 						if($ctaLeftTitle){
 							echo $ctaLeftTitle;
@@ -131,8 +135,8 @@ $heroBG = 'background:linear-gradient(rgba(69, 96, 85, 0.7),rgba(69, 96, 85, 0.7
 						}
 						?>
 					</div>
-					<div class="span-6 col">
-						<h2><?php
+					<div class="span-6 col form">
+						<h2 class="contact"><?php
 						if($ctaRightTitle){
 							echo $ctaRightTitle;
 						}else{
@@ -148,6 +152,9 @@ $heroBG = 'background:linear-gradient(rgba(69, 96, 85, 0.7),rgba(69, 96, 85, 0.7
 						?>
 					</div>
 			</section>
+<!-- CTA ENDS HERE -->
+			
+			
 			<?php endwhile; ?>
 			<section class="latest">
 				<div class="content">

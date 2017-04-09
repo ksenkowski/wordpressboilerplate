@@ -3,7 +3,7 @@
 		<div class="col span-2">
 			<img src="<?php echo get_template_directory_uri(); ?>/dist/img/logo.png" class="logo">
 		</div>
-		<div class="col span-8">
+		<div class="col span-7">
 			<ul class="unstyled">
 				<li>M.A.S.K., P.O. BOX 368755,</li>
 				<li>Chicago, Illinois 60636</li>
@@ -12,7 +12,7 @@
 				<li class="mail"><i class="fa fa-envelope" aria-hidden="true"></i> <a href="mailto:info@ontheblock.org">info@ontheblock.org</a></li>
 			</ul>
 		</div>
-		<div class="col span-2">
+		<div class="col span-3">
 			<div class="social-group">
 				<a href="https://twitter.com/MASKchicago_" target="_new">
 					<i class="fa fa-twitter" aria-hidden="true"></i>

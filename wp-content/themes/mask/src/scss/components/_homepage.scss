@@ -66,21 +66,25 @@
 		z-index:3;
 	}
 	.content-group{
-		width:320px;
+		min-width:300px;
+		max-width:600px;
 		margin:0 auto;
 	}
 	h2{
 		text-align:left;
-		margin:160px 0px 30px -30px;
+		margin:30px 0px 30px 0px;
 		padding-left:30px;
 		background: url('../img/mission.png') bottom left no-repeat;
 		background-size:contain;
 		display:block;
 		width:115px;
 		min-height:110px;
+		@include breakpoint(portrait){
+			margin:120px 0px 30px 0px;
+	
+		}
 	}
 	p{
-		font-size:rem(12px);
 		margin:0 0 50px;
 		font-weight:700;
 	}
@@ -107,7 +111,7 @@
 		z-index:3;
 	}
 	.who{
-		padding:0px 50px 100px;
+		padding:0px 50px 30px;
 		position:relative;
 		@include breakpoint(portrait){
 			padding:100px 50px;
@@ -115,7 +119,7 @@
 		}
 	}
 	.where{
-		padding:0px 50px 100px;
+		padding:0px 50px 40px;
 		position:relative;
 		@include breakpoint(portrait){
 			padding:100px 50px;
@@ -133,12 +137,11 @@
 		text-transform:uppercase;
 	}
 	p{
-		font-size:rem(12px);
 		font-weight:700;
 		margin:0 0 20px;
 	}
 	ul{
-		font-size:rem(12px);
+		font-size:rem(16px);
 		.location{
 			text-transform:uppercase;
 		}
@@ -203,19 +206,38 @@
 		left:0;
 		z-index:3;
 	}
+	.donate{
+		padding:0;
+		@include breakpoint(portrait){
+			padding:0 25px 0 0;
+		}
+	}
+	.form{
+		@include alpha-attribute('border-top', rgba($color-primary-1, .7), 1px solid, $color-primary-1);
+		margin:32px 0 0;
+		@include breakpoint(portrait){
+			border-top:none;
+			margin:0;
+		}
+		
+	}
 	h2{
 		margin:32px 0px 26px;
-		font-size:rem(25px);
+		font-size:rem(30px);
 		font-weight:400;
+		&.contact{
+			margin:5px 0px 46px;
+			@include breakpoint(portrait){
+				margin:32px 0px 46px;
+			}
+		}
 	}
 	p, ul{
-		font-size:rem(12px);
 		line-height:141.67%;
 		margin-bottom:15px;
 	}
 	a{
 		text-transform:uppercase;
-		font-size:rem(12px);
 		line-height:141.67%;
 		font-style:italic;
 		font-weight:600;
@@ -228,6 +250,7 @@
 		display:block;
 		font-size:rem(12px) !important;
 		padding:10px 0px 8px 0px !important;
+		margin-bottom:20px;
 		font-weight:800;
 		text-transform:uppercase;
 		text-align:center;

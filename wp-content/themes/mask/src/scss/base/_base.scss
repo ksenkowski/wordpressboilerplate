@@ -87,7 +87,7 @@ s{
 }
 hr{
 	height:2px;
-	border-top:1px solid $color-primary-5;
+	@include alpha-attribute('border-top', rgba($color-primary-3, .3), 1px solid, $color-primary-0);
 }
 code{
 	padding:rem(16px);
