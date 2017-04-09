@@ -36,7 +36,7 @@
 
 					<div class="button-group">
 						<div class="social-buttons">
-							<a href="https://twitter.com/MASKchicago" target="_new">
+							<a href="https://twitter.com/MASKchicago_" target="_new">
 								<i class="fa fa-twitter" aria-hidden="true"></i>
 							</a>
 							<a href="https://www.facebook.com/Mothers-Against-Senseless-Killings-541764962534514/" target="_new">
@@ -57,10 +57,7 @@
 					<!-- logo -->
 					<div class="span-12 col">
 						<button class="open-menu">&#9776;</button>
-						<!-- <a href="<?php echo home_url(); ?>">
-							<img src="<?php echo get_template_directory_uri(); ?>/dist/img/logo.svg" onerror="<?php echo get_template_directory_uri(); ?>/dist/img/logo.png'" class="logo">
-						</a> -->
-					<img src="<?php echo get_template_directory_uri(); ?>/dist/img/logo.svg" onerror="this.src='<?php echo get_template_directory_uri(); ?>/dist/img/logo-header.png'" class="logo">
+					<a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/dist/img/logo.svg" onerror="this.src='<?php echo get_template_directory_uri(); ?>/dist/img/logo-header.png'" class="logo"></a>
 					<div class="button-group sticky">
 						<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 						<input type="hidden" name="cmd" value="_s-xclick">
